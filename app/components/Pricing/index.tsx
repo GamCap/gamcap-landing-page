@@ -4,12 +4,15 @@ import { Title } from "../Title";
 
 export function Pricing() {
   return (
-    <div className=" w-full bg-background-primary flex flex-col px-8 pt-[150px] pb-[75px] gap-16">
+    <div className=" w-full bg-background-primary flex flex-col px-8 pt-[150px] pb-[75px] gap-16 items-center justify-center">
+      <span className="hash-span" id="Pricing">
+        &nbsp;
+      </span>
       <Title
         title="Making NFTs Accessible"
         description="NFTBull is the gateway for exploring the uncharted world of NFTs. We're revolutionizing the way you create and trade NFTs."
       />
-      <div className="grid grid-cols-1 md:grid-cols-3 min-h-[400px]">
+      <div className="grid grid-cols-1 md:grid-cols-3 min-h-[400px] max-w-[1368px] w-full">
         <PriceCard
           title="retail traders & collectors"
           description="Enabling NFT traders to navigate the market with sentiment analysis, portfolio tracking, limit ordering, personalized dashboard."
