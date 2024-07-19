@@ -73,7 +73,8 @@ const AnimatedCircle: React.FC<AnimatedCircleProps> = ({
 
     const animate = () => {
       if (circle) {
-        angle += speed;
+        // angle += speed; add modulo 2 * Math.PI if you want to loop the animation
+        angle = (angle + speed) % (2 * Math.PI);
         const x = radiusX * Math.cos(angle);
         const y = radiusY * Math.sin(angle);
 

@@ -36,25 +36,28 @@ export function Hero() {
       </span>
       <div className=" w-full px-16 flex flex-col gap-8 max-w-[1368px]">
         <div className=" text-white text-[100px] leading-[126px] flex flex-col items-start font-bold font-outfit">
-          <p>NFT Terminal</p>
+          <p>Simplifying </p>
           <div className="flex flex-row">
-            <p>with&nbsp;</p>
+            <p>Web3 for&nbsp;</p>
             <AnimatedText
-              words={[
-                "Insights",
-                "Trading Suite",
-                "Sentiment Analysis",
-                "Portfolio Tracking",
-              ]}
+              words={["dApps", "Institutions", "Users"]}
               interval={3000}
             />
           </div>
         </div>
         <p className="max-w-[402px] text-[16px] font-poppins text-text-secondary pb-4">
-          The NFT market is full of conventional approaches, we break the
-          tradition with methods tailored for the NFT market.
+          Gamcap Labs is a coalition of seasoned Web3 builders with a strong
+          focus on building data solutions around the blockchain space.
         </p>
-        <ButtonPrimary text="Get Started" onClick={() => {}} />
+        <ButtonPrimary
+          text="Check our portfolio"
+          onClick={() => {
+            const element = document.getElementById("Solutions");
+            if (element) {
+              element.scrollIntoView({ behavior: "smooth" });
+            }
+          }}
+        />
       </div>
     </div>
   );

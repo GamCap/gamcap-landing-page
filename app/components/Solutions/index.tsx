@@ -15,7 +15,7 @@ export function Solutions() {
       </span>
       <Title
         title="Solutions"
-        description="Our vision is to emerge as the terminal for NFTs. The insights include tailored methods such as sentiment analysis, liquidity index, and holder tracking supported by an extensive suite of trading and portfolio tools."
+        description="Gamcap Labs is continuously ingesting new data from on/off-chain data sources, blockchains and social media. This raw data is then curated by its state-of-art smart contract decoders and data processing models specifically developed by the GCL team, vetting all the information and ensuring accuracy across the board."
       />
       <div
         ref={parentRef}
@@ -51,29 +51,29 @@ export function Solutions() {
       </div>
       <div className="px-16 flex flex-wrap justify-center lg:flex-col gap-8 content-between xl:flex-wrap xl:max-h-[700px] max-w-[1368px] w-full ">
         <Card
-          title="Data Analytics"
-          description="Tap into unparalleled coverage of on-chain and social media analytics."
+          title="Polya AI"
+          description="Web3 Terminal"
           active={activeCard === 0}
           onClick={() => setActiveCard(0)}
           className="xl:pt-0 z-20"
         />
         <Card
-          title="Insights"
-          description="Discover new opportunities with cutting-edge NFTBull Sentiment Analysis module and NFTBull indices."
+          title="Uniswap Easy"
+          description="Developed Uniswap v4 liquidity deposit"
           active={activeCard === 1}
           onClick={() => setActiveCard(1)}
           className="xl:pt-8 z-20"
         />
         <Card
-          title="Data Analytics"
-          description="Tap into unparalleled coverage of on-chain and social media analytics."
+          title="Merkle Tree Visualization"
+          description="Developed merkle tree visualization for Worldcoin Foundation"
           active={activeCard === 2}
           onClick={() => setActiveCard(2)}
           className="xl:pt-8 z-20"
         />
         <Card
-          title="Insights"
-          description="Discover new opportunities with cutting-edge NFTBull Sentiment Analysis module and NFTBull indices."
+          title="NFTBull"
+          description="NFT specialized analytics platform"
           active={activeCard === 3}
           onClick={() => setActiveCard(3)}
           className="xl:pt-8 z-20"

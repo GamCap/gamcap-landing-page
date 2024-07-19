@@ -14,8 +14,14 @@ export function Header() {
           <li>
             <a href="#Solutions">Solutions</a>
           </li>
+          {/* <li>
+            <a href="#Blog">Blog</a>
+          </li>
           <li>
             <a href="#Pricing">Pricing</a>
+          </li> */}
+          <li>
+            <a href="#Contact">Contact</a>
           </li>
         </ul>
         <ThemeSwitch />
