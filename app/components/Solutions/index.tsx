@@ -6,7 +6,7 @@ import { AnimatedCircle } from "../AnimatedCircle";
 import { AnimatePresence, motion } from "framer-motion";
 import { prefix } from "@/app/prefix";
 export function Solutions() {
-  const [activeCard, setActiveCard] = useState<number>(0);
+  const [activeCard, setActiveCard] = useState<number>(2);
   const parentRef = useRef<HTMLDivElement>(null);
 
   return (
@@ -106,6 +106,7 @@ const AnimatedContent = ({ selectedCard }: AnimatedContentProps) => {
             width="100%"
             controls={false}
             autoPlay
+            loop
             className="border border-stroke rounded-md w-3/4"
           >
             <source src={`${prefix}/videos/polyaIntro.mp4`} type="video/mp4" />
