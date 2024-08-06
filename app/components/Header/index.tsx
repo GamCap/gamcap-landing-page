@@ -25,7 +25,7 @@ export function Header() {
             <a href="#Contact">Contact</a>
           </li>
         </ul>
-        <div></div>
+        <div className="w-[60px] h-[60px] invisible" />
         {/* <ThemeSwitch /> */}
       </div>
     </div>
