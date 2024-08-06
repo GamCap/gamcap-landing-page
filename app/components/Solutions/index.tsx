@@ -49,7 +49,7 @@ export function Solutions() {
           parent={parentRef}
         />
       </div>
-      <div className="px-16 flex flex-wrap justify-center lg:flex-col gap-8 content-between xl:flex-wrap xl:max-h-[700px] max-w-[1368px] w-full relative">
+      <div className="lg:px-16 flex flex-wrap justify-center lg:flex-col gap-8 content-between xl:flex-wrap xl:max-h-[700px] max-w-[1368px] w-full relative">
         <AnimatedContent selectedCard={activeCard} />
         <Card
           title="Polya AI"
@@ -107,7 +107,7 @@ const AnimatedContent = ({ selectedCard }: AnimatedContentProps) => {
             controls={false}
             autoPlay
             loop
-            className="border border-stroke rounded-md w-3/4"
+            className="border border-stroke rounded-md w-full md:w-3/4"
           >
             <source src={`${prefix}/videos/polyaIntro.mp4`} type="video/mp4" />
             Your browser does not support the video tag.
@@ -122,7 +122,7 @@ const AnimatedContent = ({ selectedCard }: AnimatedContentProps) => {
               exit={{ opacity: 0, transform: "translate(-75%,-75%)" }}
               src={`${prefix}/images/uniswapeasy.png`}
               alt="Uniswap Easy"
-              className="absolute h-full top-[71%] left-[30%] lg:h-auto lg:w-3/5 lg:left-1/2 lg:top-1/2 z-[3]"
+              className="absolute h-3/4 top-1/2 left-1/2 md:h-full md:top-[71%] md:left-[30%] lg:h-auto lg:w-3/5 lg:left-1/2 lg:top-1/2 z-[3]"
             />
             <motion.img
               key="uniswap3"
@@ -131,7 +131,7 @@ const AnimatedContent = ({ selectedCard }: AnimatedContentProps) => {
               exit={{ opacity: 0, transform: "translate(75%,50%)" }}
               src={`${prefix}/images/confirmTransaction.png`}
               alt="Uniswap Easy"
-              className="absolute h-1/2 right-1/4 lg:h-auto lg:w-1/2 lg:left-0 lg:top-1/2 z-[2] "
+              className="absolute h-1/3 right-1/2 bottom-[10%] md:bottom-auto md:h-1/2 md:right-1/4 lg:h-auto lg:w-1/2 lg:left-0 lg:top-1/2 z-[2] "
             />
           </div>
         )}
@@ -144,7 +144,7 @@ const AnimatedContent = ({ selectedCard }: AnimatedContentProps) => {
               exit={{ opacity: 0, transform: "translate(-50%,-150%)" }}
               src={`${prefix}/images/treeBlockRange.png`}
               alt="Merkle Tree Visualization"
-              className="absolute w-3/5 left-1/2 top-1/2 z-[3] border border-stroke rounded-md"
+              className="absolute w-[80%] top-[35%] left-1/2 sm:w-3/5 sm:left-1/2 sm:top-1/2 z-[3] border border-stroke rounded-md"
             />
             <motion.img
               key="merkle2"
@@ -153,7 +153,7 @@ const AnimatedContent = ({ selectedCard }: AnimatedContentProps) => {
               exit={{ opacity: 0, transform: "translate(50%,50%)" }}
               src={`${prefix}/images/calendarHeatmap.png`}
               alt="Dashboard Calendar Heatmap"
-              className="absolute w-3/5 right-0 top-1/2 z-[2] border border-stroke rounded-md"
+              className="absolute w-[80%] right-0 top-[35%] sm:w-3/5 sm:right-0 sm:top-1/2 z-[2] border border-stroke rounded-md"
             />
 
             <motion.img
@@ -163,7 +163,7 @@ const AnimatedContent = ({ selectedCard }: AnimatedContentProps) => {
               exit={{ opacity: 0, transform: "translate(-50%,-50%)" }}
               src={`${prefix}/images/barChart.png`}
               alt="Dashboard Bar Chart"
-              className="absolute w-1/2 left-0 top-1/2 z-[2] border border-stroke rounded-md"
+              className="absolute w-[80%] left-0 top-1/2 sm:w-1/2 sm:left-0 sm:top-1/2 z-[1] border border-stroke rounded-md"
             />
           </motion.div>
         )}
@@ -177,7 +177,7 @@ const AnimatedContent = ({ selectedCard }: AnimatedContentProps) => {
               exit={{ opacity: 0, transform: "translate(-50%,-100%)" }}
               src={`${prefix}/images/projectHeader.png`}
               alt="NFTBull"
-              className="absolute w-3/5 left-1/2 lg:top-[35%] xl:top-1/4 z-[3] border border-stroke rounded-md"
+              className="absolute w-[80%] top-0 left-1/2 sm:w-3/5 sm:left-1/2 lg:top-[35%] xl:top-1/4 z-[3] border border-stroke rounded-md"
             />
             <motion.img
               key="nftbull2"
@@ -186,7 +186,7 @@ const AnimatedContent = ({ selectedCard }: AnimatedContentProps) => {
               exit={{ opacity: 0, transform: "translate(50%,50%)" }}
               src={`${prefix}/images/projectOverview.png`}
               alt="NFTBull"
-              className="absolute w-3/5 right-0 top-1/2 z-[2] border border-stroke rounded-md"
+              className="absolute w-3/4 right-0 top-[35%] sm:w-3/5 sm:right-0 sm:top-1/2 z-[2] border border-stroke rounded-md"
             />
             <motion.img
               key="nftbull3"
@@ -195,7 +195,7 @@ const AnimatedContent = ({ selectedCard }: AnimatedContentProps) => {
               exit={{ opacity: 0, transform: "translate(-50%,-50%)" }}
               src={`${prefix}/images/Screener.png`}
               alt="NFTBull"
-              className="absolute w-1/2 left-0 top-1/2 z-[1] border border-stroke rounded-md"
+              className="absolute w-3/4 top-1/2 sm:w-1/2 sm:left-0 sm:top-1/2 z-[1] border border-stroke rounded-md"
             />
           </motion.div>
         )}
