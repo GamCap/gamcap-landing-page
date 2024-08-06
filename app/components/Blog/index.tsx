@@ -12,7 +12,7 @@ export function Blog() {
         Explore our insights on NFT&apos;s generated from marketplace
         activities, on-chain transactions and social media presence
       </p>
-      <div className="grid grid-cols-1 md:grid-cols-3 min-h-[400px] max-w-[1368px] w-full gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-3 min-h-[400px] container w-full gap-4">
         <BlogCard
           picture="/thumbnail1.png"
           title="NFT Market Analysis"

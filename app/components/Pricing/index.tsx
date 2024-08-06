@@ -12,7 +12,7 @@ export function Pricing() {
         title="Making NFTs Accessible"
         description="NFTBull is the gateway for exploring the uncharted world of NFTs. We're revolutionizing the way you create and trade NFTs."
       />
-      <div className="grid grid-cols-1 md:grid-cols-3 min-h-[400px] max-w-[1368px] w-full">
+      <div className="grid grid-cols-1 md:grid-cols-3 min-h-[400px] container w-full">
         <PriceCard
           title="retail traders & collectors"
           description="Enabling NFT traders to navigate the market with sentiment analysis, portfolio tracking, limit ordering, personalized dashboard."

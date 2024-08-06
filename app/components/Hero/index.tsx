@@ -34,7 +34,7 @@ export function Hero() {
       <span className="hash-span" id="Hero">
         &nbsp;
       </span>
-      <div className=" w-full px-16 flex flex-col gap-8 max-w-[1368px] items-center text-center xl:items-start xl:text-start">
+      <div className=" w-full px-16 flex flex-col gap-8 container items-center text-center xl:items-start xl:text-start">
         <div className=" text-white text-[64px] leading-[80px] xl:text-[100px] xl:leading-[126px] flex flex-col items-center xl:items-start font-bold">
           <p>
             Simplifying <span className="xl:hidden">Web3 for&nbsp;</span>

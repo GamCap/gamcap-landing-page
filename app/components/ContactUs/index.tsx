@@ -8,7 +8,7 @@ export function ContactUs() {
       <span className="hash-span" id="Contact">
         &nbsp;
       </span>
-      <div className=" w-full px-16 flex flex-col gap-8 max-w-[1368px] text-center">
+      <div className=" w-full px-16 flex flex-col gap-8 container text-center">
         <p>
           Blockchain adoption is at an inflection point, with growing interest
           from retail and institutional investors. Gamcap Labs is positioned to

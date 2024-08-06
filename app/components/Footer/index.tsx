@@ -41,7 +41,7 @@ export const Footer = () => {
           </div>
         </div>
       </div> */}
-      <div className="flex flex-row justify-between w-full max-w-[1358px]">
+      <div className="flex flex-row justify-between w-full container">
         <p className="text-text-tertiary">
           {" "}
           © 2024 GamCap Labs. All rights reserved.

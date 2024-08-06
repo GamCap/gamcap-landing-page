@@ -10,12 +10,12 @@ export function Solutions() {
   const parentRef = useRef<HTMLDivElement>(null);
 
   return (
-    <div className=" w-full bg-background-primary flex flex-col px-8 pt-[150px] pb-[75px] gap-16 items-center justify-center relative overflow-hidden">
+    <div className=" w-full bg-background-primary flex flex-col px-8 pb-[75px] gap-16 items-center justify-center relative overflow-x-hidden">
       <span className="hash-span" id="Solutions">
         &nbsp;
       </span>
       <Title
-        title="Solutions"
+        title="Portfolio"
         description="Gamcap Labs is continuously ingesting new data from on/off-chain data sources, blockchains and social media. This raw data is then curated by its state-of-art smart contract decoders and data processing models specifically developed by the GCL team, vetting all the information and ensuring accuracy across the board."
       />
       <div
@@ -49,7 +49,7 @@ export function Solutions() {
           parent={parentRef}
         />
       </div>
-      <div className="lg:px-16 flex flex-wrap justify-center lg:flex-col gap-8 content-between xl:flex-wrap xl:max-h-[700px] max-w-[1368px] w-full relative">
+      <div className="lg:px-16 flex flex-wrap justify-center lg:flex-col gap-8 content-between xl:flex-wrap xl:max-h-[700px] container w-full relative">
         <AnimatedContent selectedCard={activeCard} />
         <Card
           title="Polya AI"
