@@ -4,6 +4,7 @@ import { Card } from "../Card";
 import { Title } from "../Title";
 import { AnimatedCircle } from "../AnimatedCircle";
 import { AnimatePresence, motion } from "framer-motion";
+import { prefix } from "@/app/prefix";
 export function Solutions() {
   const [activeCard, setActiveCard] = useState<number>(0);
   const parentRef = useRef<HTMLDivElement>(null);
@@ -107,7 +108,7 @@ const AnimatedContent = ({ selectedCard }: AnimatedContentProps) => {
             autoPlay
             className="border border-stroke rounded-md w-3/4"
           >
-            <source src="/videos/polyaIntro.mp4" type="video/mp4" />
+            <source src={`${prefix}/videos/polyaIntro.mp4`} type="video/mp4" />
             Your browser does not support the video tag.
           </motion.video>
         )}
@@ -118,7 +119,7 @@ const AnimatedContent = ({ selectedCard }: AnimatedContentProps) => {
               initial={{ opacity: 0, transform: "translate(-25%,-75%)" }}
               animate={{ opacity: 1, transform: "translate(-50%,-75%)" }}
               exit={{ opacity: 0, transform: "translate(-75%,-75%)" }}
-              src="/images/uniswapeasy.png"
+              src={`${prefix}/images/uniswapeasy.png`}
               alt="Uniswap Easy"
               className="absolute h-full top-[71%] left-[30%] lg:h-auto lg:w-3/5 lg:left-1/2 lg:top-1/2 z-[3]"
             />
@@ -127,7 +128,7 @@ const AnimatedContent = ({ selectedCard }: AnimatedContentProps) => {
               initial={{ opacity: 0, transform: "translate(25%,50%)" }}
               animate={{ opacity: 1, transform: "translate(50%,50%)" }}
               exit={{ opacity: 0, transform: "translate(75%,50%)" }}
-              src="/images/confirmTransaction.png"
+              src={`${prefix}images/confirmTransaction.png`}
               alt="Uniswap Easy"
               className="absolute h-1/2 right-1/4 lg:h-auto lg:w-1/2 lg:left-0 lg:top-1/2 z-[2] "
             />
@@ -140,7 +141,7 @@ const AnimatedContent = ({ selectedCard }: AnimatedContentProps) => {
               initial={{ opacity: 0, transform: "translate(-50%,-150%)" }}
               animate={{ opacity: 1, transform: "translate(-50%,-100%)" }}
               exit={{ opacity: 0, transform: "translate(-50%,-150%)" }}
-              src="/images/treeBlockRange.png"
+              src={`${prefix}/images/treeBlockRange.png`}
               alt="Merkle Tree Visualization"
               className="absolute w-3/5 left-1/2 top-1/2 z-[3] border border-stroke rounded-md"
             />
@@ -149,7 +150,7 @@ const AnimatedContent = ({ selectedCard }: AnimatedContentProps) => {
               initial={{ opacity: 0, transform: "translate(50%,50%)" }}
               animate={{ opacity: 1, transform: "translate(0%,-25%)" }}
               exit={{ opacity: 0, transform: "translate(50%,50%)" }}
-              src="/images/calendarHeatmap.png"
+              src={`${prefix}/images/calendarHeatmap.png`}
               alt="Dashboard Calendar Heatmap"
               className="absolute w-3/5 right-0 top-1/2 z-[2] border border-stroke rounded-md"
             />
@@ -159,7 +160,7 @@ const AnimatedContent = ({ selectedCard }: AnimatedContentProps) => {
               initial={{ opacity: 0, transform: "translate(-50%,-50%)" }}
               animate={{ opacity: 1, transform: "translate(0%,-25%)" }}
               exit={{ opacity: 0, transform: "translate(-50%,-50%)" }}
-              src="/images/barChart.png"
+              src={`${prefix}/images/barChart.png`}
               alt="Dashboard Bar Chart"
               className="absolute w-1/2 left-0 top-1/2 z-[2] border border-stroke rounded-md"
             />
@@ -173,7 +174,7 @@ const AnimatedContent = ({ selectedCard }: AnimatedContentProps) => {
               initial={{ opacity: 0, transform: "translate(-50%,-100%)" }}
               animate={{ opacity: 1, transform: "translate(-50%,-50%)" }}
               exit={{ opacity: 0, transform: "translate(-50%,-100%)" }}
-              src="/images/projectHeader.png"
+              src={`${prefix}/images/projectHeader.png`}
               alt="NFTBull"
               className="absolute w-3/5 left-1/2 lg:top-[35%] xl:top-1/4 z-[3] border border-stroke rounded-md"
             />
@@ -182,7 +183,7 @@ const AnimatedContent = ({ selectedCard }: AnimatedContentProps) => {
               initial={{ opacity: 0, transform: "translate(50%,50%)" }}
               animate={{ opacity: 1, transform: "translate(0%,-100%)" }}
               exit={{ opacity: 0, transform: "translate(50%,50%)" }}
-              src="/images/projectOverview.png"
+              src={`${prefix}/images/projectOverview.png`}
               alt="NFTBull"
               className="absolute w-3/5 right-0 top-1/2 z-[2] border border-stroke rounded-md"
             />
@@ -191,7 +192,7 @@ const AnimatedContent = ({ selectedCard }: AnimatedContentProps) => {
               initial={{ opacity: 0, transform: "translate(-50%,-50%)" }}
               animate={{ opacity: 1, transform: "translate(0%,-40%)" }}
               exit={{ opacity: 0, transform: "translate(-50%,-50%)" }}
-              src="/images/Screener.png"
+              src={`${prefix}/images/Screener.png`}
               alt="NFTBull"
               className="absolute w-1/2 left-0 top-1/2 z-[1] border border-stroke rounded-md"
             />
