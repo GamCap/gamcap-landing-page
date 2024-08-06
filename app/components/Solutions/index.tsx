@@ -128,7 +128,7 @@ const AnimatedContent = ({ selectedCard }: AnimatedContentProps) => {
               initial={{ opacity: 0, transform: "translate(25%,50%)" }}
               animate={{ opacity: 1, transform: "translate(50%,50%)" }}
               exit={{ opacity: 0, transform: "translate(75%,50%)" }}
-              src={`${prefix}images/confirmTransaction.png`}
+              src={`${prefix}/images/confirmTransaction.png`}
               alt="Uniswap Easy"
               className="absolute h-1/2 right-1/4 lg:h-auto lg:w-1/2 lg:left-0 lg:top-1/2 z-[2] "
             />
