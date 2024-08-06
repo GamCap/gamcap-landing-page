@@ -28,18 +28,12 @@ const AnimatedCircle: React.FC<AnimatedCircleProps> = ({
   parent,
 }) => {
   const circleRef = useRef<HTMLDivElement>(null);
-  const [center, setCenter] = useState({
-    x: parent.current?.offsetWidth
-      ? parent.current.offsetWidth / initialXDivider
-      : window.innerWidth / initialXDivider,
-    y: parent.current?.offsetHeight
-      ? parent.current.offsetHeight / initialYDivider
-      : window.innerHeight / initialYDivider,
-  });
+  const [center, setCenter] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
-    if (window === undefined) return;
-    const handleResize = () => {
+    if (typeof window === "undefined") return;
+
+    const updateCenter = () => {
       setCenter({
         x: parent.current?.offsetWidth
           ? parent.current.offsetWidth / initialXDivider
@@ -50,52 +44,42 @@ const AnimatedCircle: React.FC<AnimatedCircleProps> = ({
       });
     };
 
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    updateCenter();
+    window.addEventListener("resize", updateCenter);
+    return () => window.removeEventListener("resize", updateCenter);
   }, [initialXDivider, initialYDivider, parent]);
 
   useEffect(() => {
+    if (typeof window === "undefined") return;
+
     const circle = circleRef.current;
     let angle = 0;
     let scale = minScale;
-    let scaleDirection = 1; // 1 for growing, -1 for shrinking
+    let scaleDirection = 1;
 
     const animate = () => {
       if (circle) {
-        // angle += speed; add modulo 2 * Math.PI if you want to loop the animation
         angle = (angle + speed) % (2 * Math.PI);
         const x = radiusX * Math.cos(angle);
         const y = radiusY * Math.sin(angle);
 
-        // Apply rotation matrix
         const radians = (tiltAngle * Math.PI) / 180;
         const rotatedX = x * Math.cos(radians) - y * Math.sin(radians);
         const rotatedY = x * Math.sin(radians) + y * Math.cos(radians);
 
-        // Apply scaling
         scale += scaleSpeed * scaleDirection;
         if (scale >= maxScale || scale <= minScale) {
           scaleDirection *= -1;
         }
 
-        const transform = `translate3d(${rotatedX}px, ${rotatedY}px, 0) scale(${scale})`;
-        circle.style.transform = transform;
+        circle.style.transform = `translate3d(${rotatedX}px, ${rotatedY}px, 0) scale(${scale})`;
       }
 
       requestAnimationFrame(animate);
     };
 
     animate();
-  }, [
-    radiusX,
-    radiusY,
-    speed,
-    center,
-    tiltAngle,
-    minScale,
-    maxScale,
-    scaleSpeed,
-  ]);
+  }, [radiusX, radiusY, speed, tiltAngle, minScale, maxScale, scaleSpeed]);
 
   return (
     <div

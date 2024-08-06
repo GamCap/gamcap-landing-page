@@ -1,6 +1,6 @@
-import TwitterIcon from "../icons/Twitter";
-import LinkedinIcon from "../icons/Linkedin";
-import GitHubIcon from "../icons/GitHub";
+import TwitterIcon from "../Icons/Twitter";
+import LinkedinIcon from "../Icons/Linkedin";
+import GitHubIcon from "../Icons/GitHub";
 
 export const Footer = () => {
   return (
