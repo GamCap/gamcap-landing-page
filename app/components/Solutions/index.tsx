@@ -10,7 +10,7 @@ export function Solutions() {
   const parentRef = useRef<HTMLDivElement>(null);
 
   return (
-    <div className=" w-full bg-background-primary flex flex-col px-8 pt-[150px] pb-[75px] gap-16 items-center justify-center relative overflow-x-hidden">
+    <div className=" w-full bg-background-primary flex flex-col px-8 pt-[150px] pb-[75px] gap-16 items-center justify-center relative overflow-hidden">
       <span className="hash-span" id="Solutions">
         &nbsp;
       </span>
@@ -23,12 +23,12 @@ export function Solutions() {
         className="lg:absolute lg:top-0 lg:left-0 lg:w-full lg:h-full xl:h-full relative"
       >
         <AnimatedCircle
-          radiusX={60}
-          radiusY={30}
+          radiusX={70}
+          radiusY={40}
           speed={0.003}
           className=" bg-accent-mainGreen w-36 h-36 blur-[80px] opacity-40"
-          initialXDivider={2.4}
-          initialYDivider={1.5}
+          initialXDivider={3}
+          initialYDivider={1.8}
           tiltAngle={15}
           maxScale={1.2}
           minScale={0.8}
@@ -40,8 +40,8 @@ export function Solutions() {
           radiusY={40}
           speed={0.0035}
           className=" bg-accent-mainGreen w-36 h-36 blur-[80px] opacity-40"
-          initialXDivider={1.8}
-          initialYDivider={1.2}
+          initialXDivider={1.6}
+          initialYDivider={1.4}
           tiltAngle={30}
           maxScale={1.25}
           minScale={0.9}

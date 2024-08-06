@@ -34,11 +34,13 @@ export function Hero() {
       <span className="hash-span" id="Hero">
         &nbsp;
       </span>
-      <div className=" w-full px-16 flex flex-col gap-8 max-w-[1368px]">
-        <div className=" text-white text-[100px] leading-[126px] flex flex-col items-start font-bold font-outfit">
-          <p>Simplifying </p>
-          <div className="flex flex-row">
-            <p>Web3 for&nbsp;</p>
+      <div className=" w-full px-16 flex flex-col gap-8 max-w-[1368px] items-center text-center xl:items-start xl:text-start">
+        <div className=" text-white text-[64px] leading-[80px] xl:text-[100px] xl:leading-[126px] flex flex-col items-center xl:items-start font-bold font-outfit">
+          <p>
+            Simplifying <span className="xl:hidden">Web3 for&nbsp;</span>
+          </p>
+          <div className="flex flex-col items-center xl:flex-row">
+            <p className="hidden xl:block">Web3 for&nbsp;</p>
             <AnimatedText
               words={["dApps", "Institutions", "Users"]}
               interval={3000}
