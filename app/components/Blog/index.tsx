@@ -7,10 +7,8 @@ export function Blog() {
       <span className="hash-span" id="Blog">
         &nbsp;
       </span>
-      <p className="text-[60px] font-outfit font-medium text-white pb-6">
-        Blog
-      </p>
-      <p className="max-w-[648px] text-[20px] font-poppins text-text-secondary pb-[88px] text-center">
+      <p className="text-[60px] font-medium text-white pb-6">Blog</p>
+      <p className="max-w-[648px] text-[20px] text-text-secondary pb-[88px] text-center">
         Explore our insights on NFT&apos;s generated from marketplace
         activities, on-chain transactions and social media presence
       </p>
@@ -59,12 +57,8 @@ function BlogCard({ picture, title, date, route, tag }: BlogCardProps) {
         width={200}
         height={200}
       />
-      <p className=" text-[20px] font-medium font-outfit text-white pb-4">
-        {title}
-      </p>
-      <p className=" text-[16px] font-poppins text-text-tertiary pb-2">
-        {date}
-      </p>
+      <p className=" text-[20px] font-medium text-white pb-4">{title}</p>
+      <p className=" text-[16px] text-text-tertiary pb-2">{date}</p>
       <BlogCardTag name={tag.name} color={tag.color} />
     </div>
   );
@@ -84,7 +78,7 @@ function BlogCardTag({
       }`}
     >
       <p
-        className={` text-[14px] font-poppins ${
+        className={` text-[14px] ${
           color === "purple" ? "text-[#f09]" : "text-[#00ffb9]"
         }`}
       >

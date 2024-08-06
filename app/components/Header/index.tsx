@@ -5,9 +5,9 @@ export function Header() {
   return (
     <div className=" bg-background-primary text-white fixed top-0 left-0 w-full py-2.5 z-50 border-b border-stroke flex justify-center items-center">
       <div className=" px-16 flex flex-row justify-between items-center max-w-[1368px] w-full">
-        <Image src={`${prefix}/logo.jpeg`} alt="Logo" width={60} height={60} />
+        <Image src={`${prefix}/logo.png`} alt="Logo" width={60} height={60} />
 
-        <ul className="flex flex-row space-x-8 items-center text-[16px] font-poppins">
+        <ul className="flex flex-row space-x-8 items-center text-[16px]">
           <li>
             <a href="#Hero">Home</a>
           </li>

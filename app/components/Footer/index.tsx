@@ -71,14 +71,12 @@ const FooterColumn = ({
 }) => {
   return (
     <div className="flex flex-col gap-4">
-      <p className=" text-text-tertiary text-[14px] font-poppins pb-2">
-        {title}
-      </p>
+      <p className=" text-text-tertiary text-[14px] pb-2">{title}</p>
       {links.map((link) => (
         <a
           href={link.href}
           key={link.title}
-          className=" text-white text-[16px] font-poppins"
+          className=" text-white text-[16px]"
         >
           {link.title}
         </a>

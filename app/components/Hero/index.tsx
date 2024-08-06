@@ -35,7 +35,7 @@ export function Hero() {
         &nbsp;
       </span>
       <div className=" w-full px-16 flex flex-col gap-8 max-w-[1368px] items-center text-center xl:items-start xl:text-start">
-        <div className=" text-white text-[64px] leading-[80px] xl:text-[100px] xl:leading-[126px] flex flex-col items-center xl:items-start font-bold font-outfit">
+        <div className=" text-white text-[64px] leading-[80px] xl:text-[100px] xl:leading-[126px] flex flex-col items-center xl:items-start font-bold">
           <p>
             Simplifying <span className="xl:hidden">Web3 for&nbsp;</span>
           </p>
@@ -47,7 +47,7 @@ export function Hero() {
             />
           </div>
         </div>
-        <p className="max-w-[402px] text-[16px] font-poppins text-text-secondary pb-4">
+        <p className="max-w-[402px] text-[16px] text-text-secondary pb-4">
           Gamcap Labs is a coalition of seasoned Web3 builders with a strong
           focus on building data solutions around the blockchain space.
         </p>

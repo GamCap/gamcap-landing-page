@@ -11,6 +11,7 @@ const config: Config = {
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
         outfit: ["Outfit", "sans-serif"],
+        roboto: ["Roboto Mono", "monospace"],
       },
       colors: {
         white: "#ffffff",

@@ -14,7 +14,7 @@ export function ButtonPrimary({
       }`}
       onClick={onClick}
     >
-      <p className=" text-background-primary text-[16px] leading-[150%] font-medium font-poppins">
+      <p className=" text-background-primary text-[16px] leading-[150%] font-medium">
         {text}
       </p>
     </button>

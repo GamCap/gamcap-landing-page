@@ -24,8 +24,8 @@ export function Card({
         }`}
         onClick={onClick}
       >
-        <h1 className=" text-[24px] font-outfit">{title}</h1>
-        <p className=" text-[16px] font-poppins">{description}</p>
+        <h1 className=" text-[24px]">{title}</h1>
+        <p className=" text-[16px]">{description}</p>
       </div>
     </div>
   );
