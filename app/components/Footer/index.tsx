@@ -1,10 +1,11 @@
 import TwitterIcon from "../icons/Twitter";
 import LinkedinIcon from "../icons/Linkedin";
+import GitHubIcon from "../icons/GitHub";
 
 export const Footer = () => {
   return (
     <div className=" bg-background-secondary pt-16 pb-10 border-t border-stroke flex items-center justify-center">
-      <div className=" flex flex-row justify-between px-16 max-w-[1358px] w-full">
+      {/* <div className=" flex flex-row justify-between px-16 max-w-[1358px] w-full">
         <div className="flex flex-col gap-4">
           <p className=" text-white text-[20px] font-poppins">Footer Logo</p>
           <p className=" text-white text-[14px] font-poppins">Badge</p>
@@ -38,6 +39,23 @@ export const Footer = () => {
               <LinkedinIcon className="w-6 h-6 text-text-tertiary hover:text-accent-mainGreenHover transition-colors duration-500" />
             </div>
           </div>
+        </div>
+      </div> */}
+      <div className="flex flex-row justify-between w-full max-w-[1358px]">
+        <p className="text-text-tertiary">
+          {" "}
+          © 2024 GamCap Labs. All rights reserved.
+        </p>
+        <div className="flex flex-row gap-4">
+          <a href="https://twitter.com/gamcaplabs" target="_blank">
+            <TwitterIcon className="w-6 h-6 p-0.5 text-text-tertiary hover:text-accent-mainGreenHover transition-colors duration-500" />
+          </a>
+          <a href="https://www.linkedin.com/company/gamcaplabs" target="_blank">
+            <LinkedinIcon className="w-6 h-6 text-text-tertiary hover:text-accent-mainGreenHover transition-colors duration-500" />
+          </a>
+          <a href="https://github.com/GamCap" target="_blank">
+            <GitHubIcon className="w-6 h-6 p-0.5 text-text-tertiary hover:text-accent-mainGreenHover transition-colors duration-500" />
+          </a>
         </div>
       </div>
     </div>

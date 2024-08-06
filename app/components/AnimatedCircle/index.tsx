@@ -37,19 +37,8 @@ const AnimatedCircle: React.FC<AnimatedCircleProps> = ({
       : window.innerHeight / initialYDivider,
   });
 
-  // useEffect(() => {
-  //   const handleResize = () => {
-  //     setCenter({
-  //       x: window.innerWidth / initialXDivider,
-  //       y: window.innerHeight / initialYDivider,
-  //     });
-  //   };
-
-  //   window.addEventListener("resize", handleResize);
-  //   return () => window.removeEventListener("resize", handleResize);
-  // }, [initialXDivider, initialYDivider]);
-
   useEffect(() => {
+    if (window === undefined) return;
     const handleResize = () => {
       setCenter({
         x: parent.current?.offsetWidth

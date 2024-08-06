@@ -24,7 +24,8 @@ export function Header() {
             <a href="#Contact">Contact</a>
           </li>
         </ul>
-        <ThemeSwitch />
+        <div></div>
+        {/* <ThemeSwitch /> */}
       </div>
     </div>
   );

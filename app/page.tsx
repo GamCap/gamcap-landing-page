@@ -1,4 +1,5 @@
 import { Blog } from "./components/Blog";
+import { ContactUs } from "./components/ContactUs";
 import { Footer } from "./components/Footer";
 import { Hero } from "./components/Hero";
 import { Pricing } from "./components/Pricing";
@@ -11,6 +12,7 @@ export default function Home() {
       <Solutions />
       {/* <Blog />
       <Pricing /> */}
+      <ContactUs />
       <Footer />
     </>
   );
