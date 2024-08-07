@@ -20,5 +20,103 @@ html {
     height: 0;
     width: 0;
   }
+
+  .heroContainer {
+    @apply w-full min-h-[calc(100vh-105px)] mt-[41px]  lg:min-h-[calc(100vh-117px)] lg:mt-[53px] bg-background-primary flex flex-col items-center justify-center relative overflow-hidden;
+  }
+
+  .heroAnimatedCircle {
+    @apply bg-accent-mainGreen w-36 h-36 lg:w-52 md:h-52 blur-[80px] opacity-60
+  }
+
+  .heroDonut {
+    @apply h-full w-full scale-[150%] absolute -top-[40%] -right-[40%] lg:-right-[35%] lg:-top-[35%]  rotate-[160deg] text-accent-mainGreen opacity-10  blur-[2px] lg:blur-sm
+  }
+
+  .portfolioDonut {
+    @apply h-full w-full absolute text-accent-mainGreen opacity-10 -left-[40%] -bottom-[40%] lg:-left-[35%] lg:-bottom-[35%] blur-[2px] lg:blur-sm rotate-[340deg] scale-[150%]  
+  }
+
+  .marqueeContainer {
+    @apply animate-marquee py-4 whitespace-nowrap flex
+  }
+
+  .marqueeReverseContainer {
+    @apply animate-marquee-reverse py-4 whitespace-nowrap absolute top-0 left-0 flex
+  }
+  .marqueeItem {
+    @apply inline-block px-12
+  }
+  .marqueeItem
+  > img {
+    @apply h-8 w-auto brightness-0 invert
+  }
+
+  .slideC {
+    position: relative;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    margin: 0 auto;
+    @apply my-12 w-full h-80;
+  }
+  
+  .slide {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @apply p-4 rounded-md overflow-hidden border border-stroke w-[60%] left-[20%] md:w-[36%] md:left-[32%] lg:w-[32%] lg:left-[34%] xl:w-[25%] xl:left-[37.5%] 2xl:w-[22%] 2xl:left-[39%] bg-background-secondary transition-all duration-500 ease-in-out;
+  }
+  
+  /* 3D reflection effect */
+  .reflection {
+    position: absolute;
+    height: 60px;
+    bottom: -60px;
+    border-radius: 12px;
+    @apply bg-gradient-to-b from-background-secondary to-transparent w-[60%] left-[20%] md:w-[36%] md:left-[32%] lg:w-[32%] lg:left-[34%] xl:w-[25%] xl:left-[37.5%] 2xl:w-[22%] 2xl:left-[39%] transition-all duration-500 ease-in-out
+  }
+
+  .slide.active {
+    @apply bg-accent-mainGreen text-background-secondary;
+  }
+  .reflection.active {
+    @apply bg-gradient-to-b from-accent-mainGreen to-transparent opacity-5;
+  }
+  
+  .sliderContent {
+    @apply flex flex-col items-start justify-start h-full gap-4 relative;
+  }
+  
+  .btns {
+    @apply w-full flex items-center justify-between px-[20%] hover:text-accent-mainGreen transition-all duration-500 ease-in-out;
+  }
+
+  .sliderDonut {
+    @apply opacity-30
+  }
+  .sliderContent .sliderDonut {
+    @apply absolute w-full h-full -bottom-1/2 -left-1/2 rotate-[-15deg] scale-[130%]
+  }
+
+  .active .sliderContent .sliderDonut {
+    animation: translateX 4s infinite ease-in-out;
+    @apply text-pink opacity-80
+    
+  }
+  
+  @keyframes translateX {
+    0%, 100% {
+      transform: translateX(0) rotate(-15deg);
+    }
+    50% {
+      transform: translateX(15%) rotate(5deg);
+    }
+  }
+
+  
 }
 

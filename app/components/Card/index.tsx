@@ -31,8 +31,8 @@ export function Card({
         } ${wrapperClassName}`}
         onClick={onClick}
       >
-        <h1 className=" text-[16px]">{title}</h1>
-        <p className=" text-[14px]">{description}</p>
+        <h1 className="text-[14px]">{title}</h1>
+        <p className="text-[12px]">{description}</p>
         {donut && <Donut className={donutClassname} />}
       </div>
     </div>

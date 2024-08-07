@@ -5,7 +5,7 @@ import Email from "../Icons/Email";
 
 export const Footer = () => {
   return (
-    <div className="px-16 bg-background-secondary pt-16 pb-10 border-t border-stroke flex items-center justify-center">
+    <div className=" px-6 py-4 lg:py-8 lg:px-16 bg-background-secondary  border-t border-stroke flex items-center justify-center">
       {/* <div className=" flex flex-row justify-between px-16 max-w-[1358px] w-full">
         <div className="flex flex-col gap-4">
           <p className=" text-white text-[20px] font-poppins">Footer Logo</p>
@@ -42,23 +42,23 @@ export const Footer = () => {
           </div>
         </div>
       </div> */}
-      <div className="flex flex-row justify-between w-full container">
-        <p className="text-text-tertiary">
+      <div className="flex flex-col md:flex-row justify-between gap-2 w-full container">
+        <p className="text-text-tertiary text-[12px] lg:text-[14px]">
           {" "}
           © 2024 GamCap Labs. All rights reserved.
         </p>
-        <div className="flex flex-row gap-4">
+        <div className="flex flex-row gap-2 lg:gap-4">
           <a href="https://twitter.com/gamcaplabs" target="_blank">
-            <TwitterIcon className="w-6 h-6 p-0.5 text-text-tertiary hover:text-accent-mainGreenHover transition-colors duration-500" />
+            <TwitterIcon className="w-4 h-4 lg:w-6 lg:h-6 p-0.5 text-text-tertiary hover:text-accent-mainGreenHover transition-colors duration-500" />
           </a>
           <a href="https://www.linkedin.com/company/gamcaplabs" target="_blank">
-            <LinkedinIcon className="w-6 h-6 text-text-tertiary hover:text-accent-mainGreenHover transition-colors duration-500" />
+            <LinkedinIcon className="w-4 h-4 lg:w-6 lg:h-6 text-text-tertiary hover:text-accent-mainGreenHover transition-colors duration-500" />
           </a>
           <a href="https://github.com/GamCap" target="_blank">
-            <GitHubIcon className="w-6 h-6 p-0.5 text-text-tertiary hover:text-accent-mainGreenHover transition-colors duration-500" />
+            <GitHubIcon className="w-4 h-4 lg:w-6 lg:h-6 p-0.5 text-text-tertiary hover:text-accent-mainGreenHover transition-colors duration-500" />
           </a>
           <a href="mailto:info@gamcaplabs.com" target="_blank">
-            <Email className="w-6 h-6 text-text-tertiary hover:text-accent-mainGreenHover transition-colors duration-500" />
+            <Email className="w-4 h-4 lg:w-6 lg:h-6 text-text-tertiary hover:text-accent-mainGreenHover transition-colors duration-500" />
           </a>
         </div>
       </div>

@@ -5,10 +5,10 @@ interface TitleProps {
 export function Title({ title, description }: TitleProps) {
   return (
     <div className=" flex flex-col lg:text-start text-center lg:flex-row items-center lg:items-start justify-between container w-full px-16 lg:gap-12">
-      <p className=" text-[52px] lg:text-[60px] font-medium text-white">
+      <p className=" text-[36px] lg:text-[48px] font-medium text-white">
         {title}
       </p>
-      <p className="max-w-[800px] text-[16px]  lg:text-[20px] text-white">
+      <p className="max-w-[800px] text-[14px]  lg:text-[16px] text-white">
         {description}
       </p>
     </div>

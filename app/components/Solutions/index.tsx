@@ -1,87 +1,73 @@
 "use client";
 import { useRef, useState } from "react";
-import { Card } from "../Card";
 import { Title } from "../Title";
-import { AnimatedCircle } from "../AnimatedCircle";
 import { AnimatePresence, motion } from "framer-motion";
 import { prefix } from "@/app/prefix";
-import { default as Donut } from "@/app/components/donut";
+import Slider from "../Slider";
+import cn from "classnames";
+import Donut from "@/app/components/donut";
+import { AnimatedCircle } from "../AnimatedCircle";
 export function Solutions() {
   const [activeCard, setActiveCard] = useState<number>(2);
   const parentRef = useRef<HTMLDivElement>(null);
 
   return (
-    <div className=" w-full bg-background-primary flex flex-col pb-[75px] gap-16 items-center justify-center relative overflow-x-hidden">
-      <span className="hash-span" id="Solutions">
+    <div
+      className=" w-full bg-background-primary flex flex-col pb-[75px] gap-4 items-center justify-center relative overflow-hidden"
+      ref={parentRef}
+    >
+      <span className="hash-span" id="Portfolio">
         &nbsp;
       </span>
-
+      <AnimatedCircle
+        radiusX={100}
+        radiusY={30}
+        speed={0.003}
+        className="heroAnimatedCircle"
+        initialXDivider={2.3}
+        initialYDivider={5}
+        tiltAngle={-20}
+        parent={parentRef}
+      />
       <Title
         title="Portfolio"
         description="Gamcap Labs is continuously ingesting new data from on/off-chain data sources, blockchains and social media. This raw data is then curated by its state-of-art smart contract decoders and data processing models specifically developed by the GCL team, vetting all the information and ensuring accuracy across the board."
       />
-      <div
-        ref={parentRef}
-        className="lg:absolute lg:top-0 lg:left-0 lg:w-full lg:h-full xl:h-full relative"
-      >
-        <AnimatedCircle
-          radiusX={70}
-          radiusY={40}
-          speed={0.003}
-          className=" bg-accent-mainGreen w-36 h-36 blur-[80px] opacity-40"
-          initialXDivider={3}
-          initialYDivider={1.8}
-          tiltAngle={15}
-          maxScale={1.2}
-          minScale={0.8}
-          scaleSpeed={0.00015}
-          parent={parentRef}
-        />
-        <AnimatedCircle
-          radiusX={120}
-          radiusY={40}
-          speed={0.0035}
-          className=" bg-accent-mainGreen w-36 h-36 blur-[80px] opacity-40"
-          initialXDivider={1.6}
-          initialYDivider={1.4}
-          tiltAngle={30}
-          maxScale={1.25}
-          minScale={0.9}
-          scaleSpeed={0.00025}
-          parent={parentRef}
+      <div className="lg:px-16 flex flex-wrap justify-center lg:flex-col gap-2 content-between xl:flex-wrap xl:max-h-[800px] container w-full relative z-[2]">
+        <Slider
+          activeSlide={activeCard}
+          setActiveSlide={setActiveCard}
+          data={[
+            {
+              title: "NFTBull",
+              desc: "NFTBull offers data solutions consisting of indices (i.e., liquidity index), metrics (i.e., momentum) tailored specifically for the NFT market.  Additionally, NFTBull has a suite of trading tools to help NFT collectors track their portfolios (PnL, exposure to broad market etc.) and efficiently execute their strategies (marketplace aggregation, limit orders).",
+            },
+
+            {
+              title: "Uniswap Easy",
+              desc: "UniswapEasy is a React widget designed to simplify liquidity management on the Uniswap V4 protocol. UniswapEasy was developed with the support from Uniswap Foundation.",
+              live: "https://gamcap.github.io/uniswapeasy-buidler/",
+              github: "https://github.com/GamCap/uniswapeasy",
+              donut: true,
+            },
+            {
+              title: "Atlas",
+              desc: "Atlas is a specialized Merkle tree analytics tool for Worldcoin's Privacy-Preserving Proof-of-Personhood Protocol (PPPoPP) to enhance identity verification observability. UniswapEasy was developed with the support from Worldcoin Foundation.",
+              github: "https://github.com/GamCap/atlas",
+              live: "https://gamcap.github.io/polya-rebirth/merkletree",
+              donut: true,
+            },
+            {
+              title: "Polya AI",
+              desc: "Polya is an AI-assisted user-friendly crypto terminal for data analytics, on-chain transactions, and toolings to better understand Web3. With intuitive language model technology, we translate user commands into code, enabling easy data analytics, on-chain transactions, and smart contract interactions. Polya empowers everyone to engage with blockchain effortlessly.",
+            },
+          ]}
         />
       </div>
-      <div className="lg:px-16 flex flex-wrap justify-center lg:flex-col gap-8 content-between xl:flex-wrap xl:max-h-[800px] container w-full relative">
+      <div className="w-full h-[200px] md:h-[300px] container z-[1]">
         <AnimatedContent selectedCard={activeCard} />
-        <Card
-          title="Polya AI"
-          description="Polya is an AI-assisted user-friendly crypto terminal for data analytics, on-chain transactions, and toolings to better understand Web3. With intuitive language model technology, we translate user commands into code, enabling easy data analytics, on-chain transactions, and smart contract interactions. Polya empowers everyone to engage with blockchain effortlessly."
-          active={activeCard === 0}
-          onClick={() => setActiveCard(0)}
-          className="xl:pt-0 z-20"
-        />
-        <Card
-          title="Uniswap Easy"
-          description="UniswapEasy is a React widget designed to simplify liquidity management on the Uniswap V4 protocol. UniswapEasy was developed with the support from Uniswap Foundation."
-          active={activeCard === 1}
-          onClick={() => setActiveCard(1)}
-          className="xl:pt-8 z-20"
-        />
-        <Card
-          title="Atlas"
-          description="Atlas is a specialized Merkle tree analytics tool for Worldcoin's Privacy-Preserving Proof-of-Personhood Protocol (PPPoPP) to enhance identity verification observability. UniswapEasy was developed with the support from Worldcoin Foundation."
-          active={activeCard === 2}
-          onClick={() => setActiveCard(2)}
-          className="xl:pt-16 z-20"
-        />
-        <Card
-          title="NFTBull"
-          description="NFTBull offers data solutions consisting of indices (i.e., liquidity index), metrics (i.e., momentum) tailored specifically for the NFT market.  Additionally, NFTBull has a suite of trading tools to help NFT collectors track their portfolios (PnL, exposure to broad market etc.) and efficiently execute their strategies (marketplace aggregation, limit orders)."
-          active={activeCard === 3}
-          onClick={() => setActiveCard(3)}
-          className="xl:pt-8 z-20"
-        />
       </div>
+      <Donut className="portfolioDonut z-[0]" />
     </div>
   );
 }
@@ -91,49 +77,100 @@ interface AnimatedContentProps {
 }
 const AnimatedContent = ({ selectedCard }: AnimatedContentProps) => {
   return (
-    <div
-      className={
-        " w-full h-[400px] flex items-center justify-center -z-0" +
-        " lg:h-auto lg:absolute lg:top-0 lg:bottom-0 lg:w-3/4 lg:translate-x-1/3" +
-        " xl:top-0 xl:bottom-0 xl:left-1/2 xl:w-1/2 xl:-translate-x-1/2"
-      }
-    >
+    <div className={" w-full h-full flex items-center justify-center -z-0"}>
       <AnimatePresence mode="wait">
         {selectedCard === 0 && (
-          <motion.video
-            key="polya"
-            initial={{ opacity: 0, transform: "translate(50%,50%)" }}
-            animate={{ opacity: 1, transform: "translate(0,0)" }}
-            exit={{ opacity: 0, transform: "translate(-50%,-50%)" }}
-            width="100%"
-            controls={false}
-            autoPlay
-            loop
-            className="border border-stroke rounded-md w-full md:w-3/4"
-          >
-            <source src={`${prefix}/videos/polyaIntro.mp4`} type="video/mp4" />
-            Your browser does not support the video tag.
-          </motion.video>
+          <motion.div className="w-full h-full relative" key="nftbullContent">
+            <motion.img
+              key="nftbull"
+              initial={{ opacity: 0, transform: "translate(-20%,0%)" }}
+              animate={{ opacity: 1, transform: "translate(-70%,0%)" }}
+              exit={{ opacity: 0, transform: "translate(-20%,0%)" }}
+              src={`${prefix}/images/projectHeader.png`}
+              alt="NFTBull"
+              className={cn(
+                "absolute z-[3] border border-stroke rounded-md",
+                "h-[35%] -right-[55%] top-0",
+                "2xl:right-0",
+                "xl:-right-[20%]",
+                "lg:h-[40%] lg:-right-[35%]",
+                "md:h-[35%] md:-right-[40%]"
+              )}
+            />
+            <motion.img
+              key="nftbull2"
+              initial={{ opacity: 0, transform: "translate(-30%,0%)" }}
+              animate={{ opacity: 1, transform: "translate(-80%,0%)" }}
+              exit={{ opacity: 0, transform: "translate(-30%,0%)" }}
+              src={`${prefix}/images/projectOverview.png`}
+              alt="NFTBull"
+              className={cn(
+                "absolute z-[2] border border-stroke rounded-md",
+                "h-[35%] -right-[45%] bottom-[25%]",
+                "2xl:right-0",
+                "xl:-right-[15%]",
+                "lg:h-[40%] lg:-right-[35%] lg:bottom-[15%]",
+                "md:h-[35%] md:-right-[35%] md:bottom-[25%]"
+              )}
+            />
+            <motion.img
+              key="nftbull3"
+              initial={{ opacity: 0, transform: "translate(-100%,0%)" }}
+              animate={{ opacity: 1, transform: "translate(-50%,0%)" }}
+              exit={{ opacity: 0, transform: "translate(-100%,0%)" }}
+              src={`${prefix}/images/Screener.png`}
+              alt="NFTBull"
+              className={cn(
+                "absolute z-[1] border border-stroke rounded-md",
+                "h-[70%] left-1/3 bottom-0",
+                "2xl:left-1/3",
+                "xl:left-1/3",
+                "lg:h-[90%]",
+                "md:h-[70%] md:left-1/4"
+              )}
+            />
+          </motion.div>
         )}
         {selectedCard === 1 && (
           <div className="w-full h-full relative">
             <motion.img
               key="uniswap"
-              initial={{ opacity: 0, transform: "translate(-25%,-75%)" }}
-              animate={{ opacity: 1, transform: "translate(-50%,-75%)" }}
-              exit={{ opacity: 0, transform: "translate(-75%,-75%)" }}
+              initial={{ opacity: 0, transform: "translate(-50%,50%)" }}
+              animate={{ opacity: 1, transform: "translate(-50%,0%)" }}
+              exit={{ opacity: 0, transform: "translate(-50%,50%)" }}
               src={`${prefix}/images/uniswapeasy.png`}
               alt="Uniswap Easy"
-              className="absolute h-3/4 top-1/2 left-1/2 md:h-full md:top-[71%] md:left-[30%] lg:h-auto lg:w-3/5 lg:left-1/2 lg:top-1/2 z-[3]"
+              className="absolute h-[100%] left-1/2 top-0 z-[3]"
+            />
+            <motion.img
+              key="uniswap2"
+              initial={{ opacity: 0, transform: "translate(100%,40%)" }}
+              animate={{ opacity: 1, transform: "translate(50%,40%)" }}
+              exit={{ opacity: 0, transform: "translate(100%,40%)" }}
+              src={`${prefix}/images/confirmTransaction.png`}
+              alt="Uniswap Easy"
+              className={cn(
+                "absolute bottom-1/2 z-[2]",
+                "h-[30%] right-[15%]",
+                "md:h-[50%] md:right-[15%]",
+                "lg:h-[50%] lg:right-1/4",
+                "xl:h-[60%] xl:right-1/4"
+              )}
             />
             <motion.img
               key="uniswap3"
-              initial={{ opacity: 0, transform: "translate(25%,50%)" }}
-              animate={{ opacity: 1, transform: "translate(50%,50%)" }}
-              exit={{ opacity: 0, transform: "translate(75%,50%)" }}
-              src={`${prefix}/images/confirmTransaction.png`}
+              initial={{ opacity: 0, transform: "translate(-100%,60%)" }}
+              animate={{ opacity: 1, transform: "translate(-50%,60%)" }}
+              exit={{ opacity: 0, transform: "translate(-100%,60%)" }}
+              src={`${prefix}/images/selectPool.png`}
               alt="Uniswap Easy"
-              className="absolute h-1/3 right-1/2 bottom-[10%] md:bottom-auto md:h-1/2 md:right-1/4 lg:h-auto lg:w-1/2 lg:left-0 lg:top-1/2 z-[2] "
+              className={cn(
+                "absolute bottom-1/2 z-[1]",
+                "h-[30%] left-[14%]",
+                "md:h-[50%] md:left-[15%]",
+                "lg:h-[50%] lg:left-1/4",
+                "xl:h-[60%] xl:left-1/4"
+              )}
             />
           </div>
         )}
@@ -141,65 +178,70 @@ const AnimatedContent = ({ selectedCard }: AnimatedContentProps) => {
           <motion.div className="w-full h-full relative" key="merkleTree">
             <motion.img
               key="merkle"
-              initial={{ opacity: 0, transform: "translate(-50%,-150%)" }}
-              animate={{ opacity: 1, transform: "translate(-50%,-100%)" }}
-              exit={{ opacity: 0, transform: "translate(-50%,-150%)" }}
+              initial={{ opacity: 0, transform: "translate(50%,100%)" }}
+              animate={{ opacity: 1, transform: "translate(50%,0%)" }}
+              exit={{ opacity: 0, transform: "translate(50%,100%)" }}
               src={`${prefix}/images/treeBlockRange.png`}
               alt="Merkle Tree Visualization"
-              className="absolute w-[80%] top-[35%] left-1/2 sm:w-3/5 sm:left-1/2 sm:top-1/2 z-[3] border border-stroke rounded-md"
-            />
-            <motion.img
-              key="merkle2"
-              initial={{ opacity: 0, transform: "translate(50%,50%)" }}
-              animate={{ opacity: 1, transform: "translate(0%,-25%)" }}
-              exit={{ opacity: 0, transform: "translate(50%,50%)" }}
-              src={`${prefix}/images/calendarHeatmap.png`}
-              alt="Dashboard Calendar Heatmap"
-              className="absolute w-[80%] right-0 top-[35%] sm:w-3/5 sm:right-0 sm:top-1/2 z-[2] border border-stroke rounded-md"
+              className={cn(
+                "absolute border border-stroke rounded-md z-[3]",
+                "2xl:h-[100%] 2xl:right-[35%] 2xl:top-0",
+                "xl:h-[100%] xl:right-[30%] xl:top-0",
+                "lg:h-[90%] lg:right-[25%] lg:top-0",
+                "md:h-[90%] md:right-[29%] md:top-0",
+                "h-[80%] right-[32%] top-0"
+              )}
             />
 
             <motion.img
               key="merkle3"
-              initial={{ opacity: 0, transform: "translate(-50%,-50%)" }}
-              animate={{ opacity: 1, transform: "translate(0%,-25%)" }}
-              exit={{ opacity: 0, transform: "translate(-50%,-50%)" }}
+              initial={{ opacity: 0, transform: "translate(-50%,75%)" }}
+              animate={{ opacity: 1, transform: "translate(0%,75%)" }}
+              exit={{ opacity: 0, transform: "translate(-50%,75%)" }}
               src={`${prefix}/images/barChart.png`}
               alt="Dashboard Bar Chart"
-              className="absolute w-[80%] left-0 top-1/2 sm:w-1/2 sm:left-0 sm:top-1/2 z-[1] border border-stroke rounded-md"
+              className={cn(
+                "absolute border border-stroke rounded-md z-[2]",
+                "2xl:h-[60%] 2xl:left-[30%] 2xl:bottom-1/2",
+                "xl:h-[60%] xl:left-[27%] xl:bottom-1/2",
+                "lg:h-[50%] lg:left-[30%] lg:bottom-1/2",
+                "md:h-[45%] md:left-[15%] md:bottom-1/2",
+                "h-[35%] left-[7%] bottom-1/2"
+              )}
+            />
+            <motion.img
+              key="merkle2"
+              initial={{ opacity: 0, transform: "translate(-40%,20%)" }}
+              animate={{ opacity: 1, transform: "translate(10%,20%)" }}
+              exit={{ opacity: 0, transform: "translate(-40%,20%)" }}
+              src={`${prefix}/images/calendarHeatmap.png`}
+              alt="Dashboard Calendar Heatmap"
+              className={cn(
+                "absolute border border-stroke rounded-md z-[1]",
+                "2xl:h-[50%] 2xl:left-[11%] 2xl:bottom-1/2",
+                "xl:h-[50%] xl:left-[5%] xl:bottom-1/2",
+                "lg:h-[45%] lg:left-[2%] lg:bottom-1/2",
+                "md:h-[35%] md:left-[0%] md:bottom-[55%]",
+                "h-[25%] left-[0%] bottom-[55%]"
+              )}
             />
           </motion.div>
         )}
 
         {selectedCard === 3 && (
-          <motion.div className="w-full h-full relative" key="nftbullContent">
-            <motion.img
-              key="nftbull"
-              initial={{ opacity: 0, transform: "translate(-50%,-100%)" }}
-              animate={{ opacity: 1, transform: "translate(-50%,-50%)" }}
-              exit={{ opacity: 0, transform: "translate(-50%,-100%)" }}
-              src={`${prefix}/images/projectHeader.png`}
-              alt="NFTBull"
-              className="absolute w-[80%] top-0 left-1/2 sm:w-3/5 sm:left-1/2 lg:top-[35%] xl:top-1/4 z-[3] border border-stroke rounded-md"
-            />
-            <motion.img
-              key="nftbull2"
-              initial={{ opacity: 0, transform: "translate(50%,50%)" }}
-              animate={{ opacity: 1, transform: "translate(0%,-100%)" }}
-              exit={{ opacity: 0, transform: "translate(50%,50%)" }}
-              src={`${prefix}/images/projectOverview.png`}
-              alt="NFTBull"
-              className="absolute w-3/4 right-0 top-[35%] sm:w-3/5 sm:right-0 sm:top-1/2 z-[2] border border-stroke rounded-md"
-            />
-            <motion.img
-              key="nftbull3"
-              initial={{ opacity: 0, transform: "translate(-50%,-50%)" }}
-              animate={{ opacity: 1, transform: "translate(0%,-40%)" }}
-              exit={{ opacity: 0, transform: "translate(-50%,-50%)" }}
-              src={`${prefix}/images/Screener.png`}
-              alt="NFTBull"
-              className="absolute w-3/4 top-1/2 sm:w-1/2 sm:left-0 sm:top-1/2 z-[1] border border-stroke rounded-md"
-            />
-          </motion.div>
+          <motion.video
+            key="polya"
+            initial={{ opacity: 0, transform: "translate(50%,0%)" }}
+            animate={{ opacity: 1, transform: "translate(0,0)" }}
+            exit={{ opacity: 0, transform: "translate(-50%,0%)" }}
+            controls={false}
+            autoPlay
+            loop
+            className="border border-stroke rounded-md w-[90%] h-fit sm:w-fit sm:h-full"
+          >
+            <source src={`${prefix}/videos/polyaIntro.mp4`} type="video/mp4" />
+            Your browser does not support the video tag.
+          </motion.video>
         )}
       </AnimatePresence>
     </div>

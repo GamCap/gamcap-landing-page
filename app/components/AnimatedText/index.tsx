@@ -45,10 +45,13 @@ const AnimatedText: React.FC<AnimatedTextProps> = ({
   }, [currentIndex, words]);
 
   return (
-    <div className="relative h-[126px] overflow-hidden" ref={parentRef}>
+    <div
+      className="relative h-[56px] xl:h-[76px] overflow-hidden"
+      ref={parentRef}
+    >
       <div
         ref={childRef}
-        className={`absolute  duration-1000 ease-in-out h-[126px] ${
+        className={`absolute  duration-1000 ease-in-out h-[56px] xl:h-[76px] ${
           isAnimating ? "transition-transform" : "transition-none"
         }`}
         style={{
@@ -58,7 +61,7 @@ const AnimatedText: React.FC<AnimatedTextProps> = ({
         {[...words, words[0]].map((word, index) => (
           <div
             key={index}
-            className={`h-[126px] text-[64px] xl:text-[100px] text-accent-mainGreen flex items-center justify-center xl:items-start xl:justify-start  duration-1000 ease-in-out whitespace-nowrap ${
+            className={`h-[56px] xl:h-[76px] text-[48px] xl:text-[64px] text-accent-mainGreen flex items-center justify-center xl:items-start xl:justify-start  duration-1000 ease-in-out whitespace-nowrap ${
               currentIndex === index ? "opacity-100" : "opacity-0"
             } ${!isAnimating ? "transition-none" : "transition-opacity"}`}
           >
