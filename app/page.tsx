@@ -1,6 +1,6 @@
 import { Footer } from "./components/Footer";
 import { Hero } from "./components/Hero";
-import ImageScroller from "./components/RollingBand";
+import ImageScroller from "./components/ImageScroller";
 import { Solutions } from "./components/Solutions";
 
 export default function Home() {

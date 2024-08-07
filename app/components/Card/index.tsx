@@ -1,4 +1,4 @@
-import Donut from "@/app/components/donut";
+import Donut from "../Icons/donut";
 interface CardProps {
   title: string;
   description: string;

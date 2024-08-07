@@ -4,7 +4,7 @@ import { Fragment, useEffect, useMemo, useState } from "react";
 import Github from "../Icons/GitHub";
 import Globe from "../Icons/Globe";
 import ExpandRight from "../Icons/ExpandRight";
-import Donut from "@/app/components/donut";
+import Donut from "../Icons/donut";
 
 interface CardProps {
   title?: string;
@@ -87,7 +87,7 @@ export default function Slider({
           zIndex: 7,
         };
     },
-    [activeSlide, translateX]
+    [activeSlide, translateX, data]
   );
 
   return (

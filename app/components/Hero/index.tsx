@@ -2,8 +2,7 @@
 import { useRef } from "react";
 import { AnimatedCircle } from "../AnimatedCircle";
 import AnimatedText from "../AnimatedText";
-import { ButtonPrimary } from "../Button";
-import Donut from "../donut";
+import Donut from "../Icons/donut";
 import cn from "classnames";
 
 export function Hero() {

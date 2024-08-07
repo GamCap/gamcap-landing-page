@@ -1,5 +1,4 @@
-import React, { useEffect, useMemo, useRef } from "react";
-import styles from "./ImageScroller.module.css";
+import { useMemo } from "react";
 
 interface ImageScrollerProps {
   images: string[];

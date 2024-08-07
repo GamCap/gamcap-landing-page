@@ -5,7 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { prefix } from "@/app/prefix";
 import Slider from "../Slider";
 import cn from "classnames";
-import Donut from "@/app/components/donut";
+import Donut from "../Icons/donut";
 import { AnimatedCircle } from "../AnimatedCircle";
 export function Solutions() {
   const [activeCard, setActiveCard] = useState<number>(2);
