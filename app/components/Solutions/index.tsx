@@ -9,13 +9,20 @@ import Donut from "../Icons/donut";
 import NFTBullLogo from "../Icons/NFTBullLogo";
 import PolyaLogo from "../Icons/PolyaLogo";
 import { AnimatedCircle } from "../AnimatedCircle";
+import ScrollToButton from "../ScrollToButton";
+import useInView from "@/app/hooks/useInView";
 export function Solutions() {
   const [activeCard, setActiveCard] = useState<number>(2);
   const parentRef = useRef<HTMLDivElement>(null);
+  const [scrollToButtonRef, isScrollToButtonVisible] = useInView({
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.1,
+  });
 
   return (
     <div
-      className=" w-full bg-background-primary flex flex-col pb-[75px] gap-4 items-center justify-center relative overflow-hidden"
+      className=" w-full bg-background-primary flex flex-col pb-[100px] gap-4 items-center justify-center relative overflow-hidden"
       ref={parentRef}
     >
       <span className="hash-span" id="Portfolio">
@@ -84,6 +91,25 @@ export function Solutions() {
         <AnimatedContent selectedCard={activeCard} />
       </div>
       <Donut className="portfolioDonut z-[0]" />
+      <div
+        ref={scrollToButtonRef}
+        className="absolute bottom-0 left-0 right-0 z-[1]"
+      >
+        <AnimatePresence>
+          {isScrollToButtonVisible && (
+            <motion.div
+              key={"scrollToButton"}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.5 }}
+              className="flex justify-center pb-4"
+            >
+              <ScrollToButton to="#Mission" text="Read our Mission & Vision" />
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
     </div>
   );
 }
