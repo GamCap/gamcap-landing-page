@@ -1,6 +1,7 @@
 import TwitterIcon from "../Icons/Twitter";
 import LinkedinIcon from "../Icons/Linkedin";
 import GitHubIcon from "../Icons/GitHub";
+import Email from "../Icons/Email";
 
 export const Footer = () => {
   return (
@@ -55,6 +56,9 @@ export const Footer = () => {
           </a>
           <a href="https://github.com/GamCap" target="_blank">
             <GitHubIcon className="w-6 h-6 p-0.5 text-text-tertiary hover:text-accent-mainGreenHover transition-colors duration-500" />
+          </a>
+          <a href="mailto:info@gamcaplabs.com" target="_blank">
+            <Email className="w-6 h-6 text-text-tertiary hover:text-accent-mainGreenHover transition-colors duration-500" />
           </a>
         </div>
       </div>
