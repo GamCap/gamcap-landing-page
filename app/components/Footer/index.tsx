@@ -1,6 +1,7 @@
 import TwitterIcon from "../Icons/Twitter";
 import GitHubIcon from "../Icons/GitHub";
 import Email from "../Icons/Email";
+import { prefix } from "@/app/prefix";
 
 export const Footer = () => {
   return (
@@ -42,11 +43,13 @@ export const Footer = () => {
         </div>
       </div> */}
       <div className="flex flex-col md:flex-row justify-between gap-2 w-full container">
-        <p className="text-text-tertiary text-[12px] lg:text-[14px]">
-          {" "}
-          © 2024 GamCap Labs. All rights reserved.
-        </p>
-        <div className="flex flex-row gap-2 lg:gap-4">
+        <div className="flex flex-row gap-2 items-center justify-between md:justify-start">
+          <img src={`${prefix}/logo.png`} alt="Logo" className="w-8 h-8" />
+          <p className="text-text-tertiary text-[12px] lg:text-[14px]">
+            © 2024 GamCap Labs. All rights reserved.
+          </p>
+        </div>
+        <div className="flex flex-row gap-2 lg:gap-4 justify-end md:justify-start">
           <a href="https://twitter.com/gamcaplabs" target="_blank">
             <TwitterIcon className="w-4 h-4 lg:w-6 lg:h-6 p-0.5 text-text-tertiary hover:text-accent-mainGreenHover transition-colors duration-500" />
           </a>

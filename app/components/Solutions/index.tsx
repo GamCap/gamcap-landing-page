@@ -6,6 +6,8 @@ import { prefix } from "@/app/prefix";
 import Slider from "../Slider";
 import cn from "classnames";
 import Donut from "../Icons/donut";
+import NFTBullLogo from "../Icons/NFTBullLogo";
+import PolyaLogo from "../Icons/PolyaLogo";
 import { AnimatedCircle } from "../AnimatedCircle";
 export function Solutions() {
   const [activeCard, setActiveCard] = useState<number>(2);
@@ -43,6 +45,15 @@ export function Solutions() {
               desc: "NFTBull is an on-chain trading platform providing real-time indexed data and trading functionalities tailored specifically for the NFT market.",
               github: "https://github.com/GamCap/nftbull_refresh",
               donut: true,
+              titleLogo: (
+                <NFTBullLogo
+                  className={`${
+                    activeCard === 0
+                      ? "fill-accent-mainGreen"
+                      : "fill-background-secondary"
+                  } h-6 w-auto`}
+                />
+              ),
             },
 
             {
@@ -64,6 +75,7 @@ export function Solutions() {
               desc: "Polya is an AI-assisted user-friendly crypto terminal for data analytics, on-chain transactions, and toolings to better understand Web3. Polya empowers everyone with intuitive language model technology, translating user commands into data analytics and smart contract interactions.",
               github: "https://github.com/GamCap/polya",
               donut: true,
+              titleLogo: <PolyaLogo className="h-6 w-auto" />,
             },
           ]}
         />
@@ -242,6 +254,7 @@ const AnimatedContent = ({ selectedCard }: AnimatedContentProps) => {
             autoPlay
             loop
             className="border border-stroke rounded-md w-[90%] h-fit sm:w-fit sm:h-full"
+            controlsList="nofullscreen"
           >
             <source src={`${prefix}/videos/polyaIntro.mp4`} type="video/mp4" />
             Your browser does not support the video tag.

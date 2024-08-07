@@ -151,9 +151,9 @@ export default function Slider({
 
 const SliderContent = (props: CardProps) => {
   return (
-    <div className={`sliderContent`}>
-      <div className="flex flex-row gap-4">
-        {props.titleLogo}
+    <div className={`sliderContent `}>
+      <div className="flex flex-row gap-4 w-full items-center justify-center lg:justify-start">
+        <div className="">{props.titleLogo}</div>
         <p className=" text-[14px]">{props.title}</p>
       </div>
       <p className=" text-[12px]">{props.desc}</p>
