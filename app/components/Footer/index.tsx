@@ -1,5 +1,4 @@
 import TwitterIcon from "../Icons/Twitter";
-import LinkedinIcon from "../Icons/Linkedin";
 import GitHubIcon from "../Icons/GitHub";
 import Email from "../Icons/Email";
 
@@ -50,9 +49,6 @@ export const Footer = () => {
         <div className="flex flex-row gap-2 lg:gap-4">
           <a href="https://twitter.com/gamcaplabs" target="_blank">
             <TwitterIcon className="w-4 h-4 lg:w-6 lg:h-6 p-0.5 text-text-tertiary hover:text-accent-mainGreenHover transition-colors duration-500" />
-          </a>
-          <a href="https://www.linkedin.com/company/gamcaplabs" target="_blank">
-            <LinkedinIcon className="w-4 h-4 lg:w-6 lg:h-6 text-text-tertiary hover:text-accent-mainGreenHover transition-colors duration-500" />
           </a>
           <a href="https://github.com/GamCap" target="_blank">
             <GitHubIcon className="w-4 h-4 lg:w-6 lg:h-6 p-0.5 text-text-tertiary hover:text-accent-mainGreenHover transition-colors duration-500" />

@@ -40,7 +40,9 @@ export function Solutions() {
           data={[
             {
               title: "NFTBull",
-              desc: "NFTBull offers data solutions consisting of indices (i.e., liquidity index), metrics (i.e., momentum) tailored specifically for the NFT market.  Additionally, NFTBull has a suite of trading tools to help NFT collectors track their portfolios (PnL, exposure to broad market etc.) and efficiently execute their strategies (marketplace aggregation, limit orders).",
+              desc: "NFTBull is an on-chain trading platform providing real-time indexed data and trading functionalities tailored specifically for the NFT market.",
+              github: "https://github.com/GamCap/nftbull_refresh",
+              donut: true,
             },
 
             {
@@ -59,7 +61,9 @@ export function Solutions() {
             },
             {
               title: "Polya AI",
-              desc: "Polya is an AI-assisted user-friendly crypto terminal for data analytics, on-chain transactions, and toolings to better understand Web3. With intuitive language model technology, we translate user commands into code, enabling easy data analytics, on-chain transactions, and smart contract interactions. Polya empowers everyone to engage with blockchain effortlessly.",
+              desc: "Polya is an AI-assisted user-friendly crypto terminal for data analytics, on-chain transactions, and toolings to better understand Web3. Polya empowers everyone with intuitive language model technology, translating user commands into data analytics and smart contract interactions.",
+              github: "https://github.com/GamCap/polya",
+              donut: true,
             },
           ]}
         />
