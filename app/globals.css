@@ -145,5 +145,23 @@ html {
     @apply h-20 w-full border-t border-stroke bg-gradient-to-b from-background-secondary from-25% z-10;
   }
   
+  .arrow {
+    font-size: 24px;
+    animation: bounce 2s infinite;
+  }
+  
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-10px);
+    }
+    60% {
+      transform: translateY(-5px);
+    }
+  }
+  
+  
 }
 

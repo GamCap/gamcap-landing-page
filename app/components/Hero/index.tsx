@@ -1,12 +1,39 @@
 "use client";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { AnimatedCircle } from "../AnimatedCircle";
 import AnimatedText from "../AnimatedText";
 import Donut from "../Icons/donut";
 import cn from "classnames";
+import ScrollToButton from "../ScrollToButton";
+import { AnimatePresence, motion } from "framer-motion";
 
 export function Hero() {
   const parentRef = useRef<HTMLDivElement>(null);
+  const [scrollPos, setScrollPos] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    window.addEventListener("scroll", listenScroll);
+
+    return () => {
+      window.removeEventListener("scroll", listenScroll);
+    };
+  });
+  const listenScroll = () => {
+    const windowScroll =
+      document.body.scrollTop || document.documentElement.scrollTop;
+
+    const height =
+      document.documentElement.scrollHeight -
+      document.documentElement.clientHeight;
+
+    const scrolledFloat = windowScroll / height;
+
+    const scrolled = scrolledFloat > 0.05;
+
+    setScrollPos(scrolled);
+  };
+
   return (
     <div className="heroContainer" ref={parentRef}>
       <img
@@ -81,6 +108,20 @@ export function Hero() {
           </p>
         </a>
       </div>
+      <AnimatePresence>
+        {!scrollPos && (
+          <motion.div
+            key={"scrollToButton"}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+            className={`absolute bottom-0 left-0 right-0 flex justify-center pb-4 z-[1]`}
+          >
+            <ScrollToButton to="#Portfolio" text="See Portfolio" />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
