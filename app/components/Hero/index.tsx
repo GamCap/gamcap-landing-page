@@ -9,6 +9,11 @@ export function Hero() {
   const parentRef = useRef<HTMLDivElement>(null);
   return (
     <div className="heroContainer" ref={parentRef}>
+      <img
+        src="/logo.png"
+        alt="Logo"
+        className="absolute top-0 left-0 z-0 opacity-10 scale-[0.8] md:scale-100"
+      />
       <Donut className="heroDonut" />
       <div id="Hero" className="spacer" aria-hidden="true"></div>
       <AnimatedCircle
@@ -33,7 +38,7 @@ export function Hero() {
       />
       <div
         className={cn(
-          "container w-full px-16 gap-8",
+          "container w-full px-16 gap-8 z-[1]",
           "flex flex-col items-center text-center",
           "xl:items-start xl:text-start"
         )}
@@ -71,7 +76,7 @@ export function Hero() {
             "transition-colors duration-200 hover:bg-accent-mainGreenHover"
           )}
         >
-          <p className="text-background-primary text-[14px] lg:text-[16px] leading-[150%] font-medium font-poppins">
+          <p className="text-background-primary text-[14px] lg:text-[16px] leading-[150%] font-medium">
             Contact us
           </p>
         </a>

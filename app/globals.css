@@ -22,19 +22,23 @@ html {
   }
 
   .heroContainer {
-    @apply w-full min-h-[calc(100vh-99px)] mt-[41px]  lg:min-h-[calc(100vh-119px)] lg:mt-[53px] bg-background-primary flex flex-col items-center justify-center relative overflow-hidden;
+    @apply w-full min-h-[calc(100vh-58px)]  lg:min-h-[calc(100vh-63px)] bg-background-primary flex flex-col items-center justify-center relative overflow-hidden;
   }
 
   .heroAnimatedCircle {
-    @apply bg-accent-mainGreen w-36 h-36 lg:w-52 md:h-52 blur-[80px] opacity-60
+    @apply bg-accent-mainGreen w-24 h-24 md:w-36 md:h-36 lg:w-52 lg:h-52 blur-[80px] opacity-60
   }
 
   .heroDonut {
-    @apply h-full w-full scale-[150%] absolute -top-[40%] -right-[40%] lg:-right-[35%] lg:-top-[35%]  rotate-[160deg] text-accent-mainGreen opacity-10  blur-[2px] lg:blur-sm
+    @apply h-full w-full scale-[150%] absolute -top-[43%] -right-[40%] lg:-right-[35%] lg:-top-[35%]  rotate-[160deg] text-accent-mainGreen opacity-10  
   }
 
   .portfolioDonut {
-    @apply h-full w-full absolute text-accent-mainGreen opacity-10 -left-[40%] -bottom-[40%] lg:-left-[35%] lg:-bottom-[35%] blur-[2px] lg:blur-sm rotate-[340deg] scale-[150%]  
+    @apply h-full w-full absolute text-accent-mainGreen opacity-10 -left-[40%] -bottom-[45%] lg:-left-[35%] lg:-bottom-[35%] rotate-[340deg] scale-[150%]  
+  }
+
+  .missionDonut {
+    @apply h-full w-full absolute text-accent-mainGreen opacity-10 -right-[40%] -bottom-[40%] lg:-right-[35%] lg:-bottom-[25%] rotate-[290deg] scale-[180%]  
   }
 
   .slideC {
@@ -108,7 +112,7 @@ html {
     gap:2rem;
     position: relative;
     user-select: none;
-    @apply border-y border-stroke py-4;
+    @apply py-4;
   }
   .marquee-content {
     flex-shrink: 0;
@@ -137,7 +141,9 @@ html {
     @apply h-6 lg:h-8 w-auto brightness-0 invert
   }
 
-
+  .missionDivider {
+    @apply h-20 w-full border-t border-stroke bg-gradient-to-b from-background-secondary from-25% z-10;
+  }
   
 }
 

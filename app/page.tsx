@@ -1,6 +1,7 @@
 import { Footer } from "./components/Footer";
 import { Hero } from "./components/Hero";
 import ImageScroller from "./components/ImageScroller";
+import { MissionAndVision } from "./components/MissionAndVision";
 import { Solutions } from "./components/Solutions";
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
         ]}
       />
       <Solutions />
+      <MissionAndVision />
       <Footer />
     </>
   );

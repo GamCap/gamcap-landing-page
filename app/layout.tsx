@@ -21,7 +21,6 @@ export default function RootLayout({
       <body className={inter.className}>
         <ThemeClient>
           <div className="flex min-h-screen flex-col items-center justify-between">
-            <Header />
             <main className="flex-grow w-full h-full">{children}</main>
           </div>
         </ThemeClient>
