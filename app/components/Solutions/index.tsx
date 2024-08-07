@@ -68,7 +68,7 @@ export function Solutions() {
           className="xl:pt-8 z-20"
         />
         <Card
-          title="Merkle Tree Visualization"
+          title="Atlas"
           description="Atlas is a specialized Merkle tree analytics tool for Worldcoin's Privacy-Preserving Proof-of-Personhood Protocol (PPPoPP) to enhance identity verification observability. UniswapEasy was developed with the support from Worldcoin Foundation."
           active={activeCard === 2}
           onClick={() => setActiveCard(2)}
