@@ -7,22 +7,13 @@ export function Header() {
       <div className=" px-16 flex flex-row justify-between items-center container w-full">
         <Image src={`${prefix}/logo.png`} alt="Logo" width={60} height={60} />
 
-        <ul className="flex flex-row space-x-8 items-center text-[16px]">
+        <ul className="flex flex-row space-x-8 items-center text-[20px] font-bold">
           <li>
             <a href="#Hero">Home</a>
           </li>
 
           <li>
-            <a href="#Solutions">Solutions</a>
-          </li>
-          {/* <li>
-            <a href="#Blog">Blog</a>
-          </li>
-          <li>
-            <a href="#Pricing">Pricing</a>
-          </li> */}
-          <li>
-            <a href="#Contact">Contact</a>
+            <a href="#Solutions">Portfolio</a>
           </li>
         </ul>
         <div className="w-[60px] h-[60px] invisible" />

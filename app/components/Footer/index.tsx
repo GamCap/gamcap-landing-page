@@ -4,7 +4,7 @@ import GitHubIcon from "../Icons/GitHub";
 
 export const Footer = () => {
   return (
-    <div className=" bg-background-secondary pt-16 pb-10 border-t border-stroke flex items-center justify-center">
+    <div className="px-16 bg-background-secondary pt-16 pb-10 border-t border-stroke flex items-center justify-center">
       {/* <div className=" flex flex-row justify-between px-16 max-w-[1358px] w-full">
         <div className="flex flex-col gap-4">
           <p className=" text-white text-[20px] font-poppins">Footer Logo</p>

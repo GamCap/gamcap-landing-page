@@ -5,15 +5,17 @@ import { Title } from "../Title";
 import { AnimatedCircle } from "../AnimatedCircle";
 import { AnimatePresence, motion } from "framer-motion";
 import { prefix } from "@/app/prefix";
+import { default as Donut } from "@/app/components/donut";
 export function Solutions() {
   const [activeCard, setActiveCard] = useState<number>(2);
   const parentRef = useRef<HTMLDivElement>(null);
 
   return (
-    <div className=" w-full bg-background-primary flex flex-col px-8 pb-[75px] gap-16 items-center justify-center relative overflow-x-hidden">
+    <div className=" w-full bg-background-primary flex flex-col pb-[75px] gap-16 items-center justify-center relative overflow-x-hidden">
       <span className="hash-span" id="Solutions">
         &nbsp;
       </span>
+
       <Title
         title="Portfolio"
         description="Gamcap Labs is continuously ingesting new data from on/off-chain data sources, blockchains and social media. This raw data is then curated by its state-of-art smart contract decoders and data processing models specifically developed by the GCL team, vetting all the information and ensuring accuracy across the board."
@@ -49,32 +51,32 @@ export function Solutions() {
           parent={parentRef}
         />
       </div>
-      <div className="lg:px-16 flex flex-wrap justify-center lg:flex-col gap-8 content-between xl:flex-wrap xl:max-h-[700px] container w-full relative">
+      <div className="lg:px-16 flex flex-wrap justify-center lg:flex-col gap-8 content-between xl:flex-wrap xl:max-h-[800px] container w-full relative">
         <AnimatedContent selectedCard={activeCard} />
         <Card
           title="Polya AI"
-          description="Web3 Terminal"
+          description="Polya is an AI-assisted user-friendly crypto terminal for data analytics, on-chain transactions, and toolings to better understand Web3. With intuitive language model technology, we translate user commands into code, enabling easy data analytics, on-chain transactions, and smart contract interactions. Polya empowers everyone to engage with blockchain effortlessly."
           active={activeCard === 0}
           onClick={() => setActiveCard(0)}
           className="xl:pt-0 z-20"
         />
         <Card
           title="Uniswap Easy"
-          description="Developed Uniswap v4 liquidity deposit"
+          description="UniswapEasy is a React widget designed to simplify liquidity management on the Uniswap V4 protocol. UniswapEasy was developed with the support from Uniswap Foundation."
           active={activeCard === 1}
           onClick={() => setActiveCard(1)}
           className="xl:pt-8 z-20"
         />
         <Card
           title="Merkle Tree Visualization"
-          description="Developed merkle tree visualization for Worldcoin Foundation"
+          description="Atlas is a specialized Merkle tree analytics tool for Worldcoin's Privacy-Preserving Proof-of-Personhood Protocol (PPPoPP) to enhance identity verification observability. UniswapEasy was developed with the support from Worldcoin Foundation."
           active={activeCard === 2}
           onClick={() => setActiveCard(2)}
-          className="xl:pt-8 z-20"
+          className="xl:pt-16 z-20"
         />
         <Card
           title="NFTBull"
-          description="NFT specialized analytics platform"
+          description="NFTBull offers data solutions consisting of indices (i.e., liquidity index), metrics (i.e., momentum) tailored specifically for the NFT market.  Additionally, NFTBull has a suite of trading tools to help NFT collectors track their portfolios (PnL, exposure to broad market etc.) and efficiently execute their strategies (marketplace aggregation, limit orders)."
           active={activeCard === 3}
           onClick={() => setActiveCard(3)}
           className="xl:pt-8 z-20"
