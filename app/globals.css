@@ -22,7 +22,7 @@ html {
   }
 
   .heroContainer {
-    @apply w-full min-h-[calc(100vh-105px)] mt-[41px]  lg:min-h-[calc(100vh-117px)] lg:mt-[53px] bg-background-primary flex flex-col items-center justify-center relative overflow-hidden;
+    @apply w-full min-h-[calc(100vh-99px)] mt-[41px]  lg:min-h-[calc(100vh-119px)] lg:mt-[53px] bg-background-primary flex flex-col items-center justify-center relative overflow-hidden;
   }
 
   .heroAnimatedCircle {
@@ -35,21 +35,6 @@ html {
 
   .portfolioDonut {
     @apply h-full w-full absolute text-accent-mainGreen opacity-10 -left-[40%] -bottom-[40%] lg:-left-[35%] lg:-bottom-[35%] blur-[2px] lg:blur-sm rotate-[340deg] scale-[150%]  
-  }
-
-  .marqueeContainer {
-    @apply animate-marquee py-4 whitespace-nowrap flex
-  }
-
-  .marqueeReverseContainer {
-    @apply animate-marquee-reverse py-4 whitespace-nowrap absolute top-0 left-0 flex
-  }
-  .marqueeItem {
-    @apply inline-block px-12
-  }
-  .marqueeItem
-  > img {
-    @apply h-8 w-auto brightness-0 invert
   }
 
   .slideC {
@@ -116,6 +101,42 @@ html {
       transform: translateX(15%) rotate(5deg);
     }
   }
+
+  .marquee {
+    display: flex;
+    overflow:hidden;
+    gap:2rem;
+    position: relative;
+    user-select: none;
+    @apply border-y border-stroke py-4;
+  }
+  .marquee-content {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-around;
+    min-width: 100%;
+    @apply gap-8
+  }
+  @keyframes scrollMarquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-100% - 2rem));
+    }
+  }
+  .scrollMarquee {
+    animation: scrollMarquee 26s linear infinite;
+  }
+
+  .marqueeItem {
+    @apply inline-block px-4
+  }
+  .marqueeItem
+  > img {
+    @apply h-6 lg:h-8 w-auto brightness-0 invert
+  }
+
 
   
 }

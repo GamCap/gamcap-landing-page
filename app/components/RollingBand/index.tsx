@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useMemo, useRef } from "react";
 import styles from "./ImageScroller.module.css";
 
 interface ImageScrollerProps {
@@ -6,22 +6,25 @@ interface ImageScrollerProps {
 }
 
 const ImageScroller: React.FC<ImageScrollerProps> = ({ images }) => {
+  const marqueeItems = useMemo(() => {
+    return images.concat(images);
+  }, [images]);
   return (
-    <div className="group relative flex overflow-x-hidden border-y border-stroke bg-background-secondary">
-      <ul className="marqueeContainer">
-        {(images ?? []).map((imageSrc) => (
+    <div className="marquee">
+      <div className="marquee-content scrollMarquee">
+        {marqueeItems.map((imageSrc) => (
           <li key={imageSrc} className="marqueeItem">
             <img src={imageSrc} alt="" />
           </li>
         ))}
-      </ul>
-      <ul className="marqueeReverseContainer">
-        {(images ?? []).map((imageSrc) => (
+      </div>
+      <div className="marquee-content scrollMarquee">
+        {marqueeItems.map((imageSrc) => (
           <li key={imageSrc} className="marqueeItem">
             <img src={imageSrc} alt="" />
           </li>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };
