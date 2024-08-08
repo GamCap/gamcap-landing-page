@@ -8,6 +8,8 @@ import cn from "classnames";
 import Donut from "../Icons/donut";
 import NFTBullLogo from "../Icons/NFTBullLogo";
 import PolyaLogo from "../Icons/PolyaLogo";
+import UniswapLogo from "../Icons/UniswapLogo";
+import WorldcoinLogo from "../Icons/WorldcoinLogo";
 import { AnimatedCircle } from "../AnimatedCircle";
 import ScrollToButton from "../ScrollToButton";
 import useInView from "@/app/hooks/useInView";
@@ -69,13 +71,15 @@ export function Solutions() {
               live: "https://gamcap.github.io/uniswapeasy-buidler/",
               github: "https://github.com/GamCap/uniswapeasy",
               donut: true,
+              titleLogo: <UniswapLogo className="h-6 w-auto" />,
             },
             {
               title: "Atlas",
               desc: "Atlas is a specialized Merkle tree analytics tool for Worldcoin's Privacy-Preserving Proof-of-Personhood Protocol (PPPoPP) to enhance identity verification observability. UniswapEasy was developed with the support from Worldcoin Foundation.",
               github: "https://github.com/GamCap/atlas",
-              live: "https://gamcap.github.io/polya-rebirth/merkletree",
+              live: "https://atlas.gamcaplabs.com",
               donut: true,
+              titleLogo: <WorldcoinLogo className="h-6 w-auto" />,
             },
             {
               title: "Polya AI",
@@ -279,6 +283,8 @@ const AnimatedContent = ({ selectedCard }: AnimatedContentProps) => {
             controls={false}
             autoPlay
             loop
+            muted
+            playsInline
             className="border border-stroke rounded-md w-[90%] h-fit sm:w-fit sm:h-full"
             controlsList="nofullscreen"
           >
