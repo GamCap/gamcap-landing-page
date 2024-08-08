@@ -58,22 +58,32 @@ html {
     justify-content: center;
     align-items: center;
     @apply p-4 rounded-md overflow-hidden border border-stroke w-[60%] left-[20%] md:w-[36%] md:left-[32%] lg:w-[32%] lg:left-[34%] xl:w-[25%] xl:left-[37.5%] 2xl:w-[22%] 2xl:left-[39%] bg-background-secondary transition-all duration-500 ease-in-out;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
   }
   
-  /* 3D reflection effect */
   .reflection {
     position: absolute;
     height: 60px;
     bottom: -60px;
     border-radius: 12px;
-    @apply bg-gradient-to-b from-background-secondary to-transparent w-[60%] left-[20%] md:w-[36%] md:left-[32%] lg:w-[32%] lg:left-[34%] xl:w-[25%] xl:left-[37.5%] 2xl:w-[22%] 2xl:left-[39%] transition-all duration-500 ease-in-out
+    @apply bg-gradient-to-b from-background-secondary to-transparent w-[60%] left-[20%] md:w-[36%] md:left-[32%] lg:w-[32%] lg:left-[34%] xl:w-[25%] xl:left-[37.5%] 2xl:w-[22%] 2xl:left-[39%] transition-all duration-500 ease-in-out opacity-50;
   }
-
+  
   .slide.active {
     @apply bg-accent-mainGreen text-background-secondary;
   }
+  
   .reflection.active {
-    @apply bg-gradient-to-b from-accent-mainGreen to-transparent opacity-5;
+    @apply bg-gradient-to-b from-accent-mainGreen to-transparent opacity-25;
   }
   
   .sliderContent {
@@ -83,18 +93,18 @@ html {
   .btns {
     @apply w-full flex items-center justify-between px-[20%] hover:text-accent-mainGreen transition-all duration-500 ease-in-out;
   }
-
+  
   .sliderDonut {
-    @apply opacity-30
+    @apply opacity-30;
   }
+  
   .sliderContent .sliderDonut {
-    @apply absolute w-full h-full -bottom-1/2 -left-1/2 rotate-[-15deg] scale-[130%]
+    @apply absolute w-full h-full -bottom-1/2 -left-1/2 rotate-[-15deg] scale-[130%];
   }
-
+  
   .active .sliderContent .sliderDonut {
     animation: translateX 4s infinite ease-in-out;
-    @apply text-pink opacity-80
-    
+    @apply text-pink opacity-80;
   }
 
   

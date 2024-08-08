@@ -1,10 +1,10 @@
 "use client";
-import { motion } from "framer-motion";
 import { Fragment, useEffect, useMemo, useState } from "react";
 import Github from "../Icons/GitHub";
 import Globe from "../Icons/Globe";
 import ExpandRight from "../Icons/ExpandRight";
 import Donut from "../Icons/donut";
+import cn from "classnames";
 
 interface CardProps {
   title?: string;
@@ -30,15 +30,24 @@ export default function Slider({
   const prev = () =>
     setActiveSlide((activeSlide - 1 + data.length) % data.length);
   const [translateX, setTranslateX] = useState(360);
+  const setTranslateXSafely = (value: number) => {
+    //check if new value is not equal to current value
+    if (value !== translateX) setTranslateX(value);
+  };
 
   const updateTranslateX = () => {
-    if (window === undefined) return;
     const width = window.innerWidth;
-    if (width < 768) setTranslateX(180);
-    else if (width < 1024) setTranslateX(360);
-    else if (width < 1280) setTranslateX(480);
-    else if (width < 1536) setTranslateX(540);
-    else setTranslateX(600);
+    setTranslateXSafely(
+      width < 768
+        ? 180
+        : width < 1024
+        ? 360
+        : width < 1280
+        ? 480
+        : width < 1536
+        ? 540
+        : 600
+    );
   };
 
   useEffect(() => {
@@ -47,48 +56,43 @@ export default function Slider({
     return () => window.removeEventListener("resize", updateTranslateX);
   }, []);
 
-  const getStyles = useMemo(
-    () => (index: number) => {
+  const getStyles = useMemo(() => {
+    return (index: number) => {
       const totalSlides = data.length;
       const leftIndex = (activeSlide - 1 + totalSlides) % totalSlides;
       const rightIndex = (activeSlide + 1) % totalSlides;
       const behindIndex = (activeSlide + 2) % totalSlides;
 
-      if (activeSlide === index)
+      if (activeSlide === index) {
         return {
-          opacity: 1,
-          transform: `translateX(0px) translateZ(0px) rotateY(0deg)`,
+          transform: `translate3d(0px, 0px, 0px) rotateY(0deg)`,
           zIndex: 10,
         };
-      else if (leftIndex === index)
+      } else if (leftIndex === index) {
         return {
-          opacity: 1,
-          transform: `translateX(-${translateX}px) translateZ(-400px) rotateY(35deg)`,
+          transform: `translate3d(-${translateX}px, 0px, -400px) rotateY(35deg)`,
           zIndex: 9,
         };
-      else if (rightIndex === index)
+      } else if (rightIndex === index) {
         return {
-          opacity: 1,
-          transform: `translateX(${translateX}px) translateZ(-400px) rotateY(-35deg)`,
+          transform: `translate3d(${translateX}px, 0px, -400px) rotateY(-35deg)`,
           zIndex: 9,
         };
-      else if (behindIndex === index)
+      } else if (behindIndex === index) {
         return {
-          opacity: 1,
-          transform: `translateX(0px) translateZ(-500px) rotateY(0deg)`,
+          transform: `translate3d(0px, 0px, -500px) rotateY(0deg)`,
           zIndex: 8,
         };
-      else
+      } else {
         return {
-          opacity: 0,
-          transform: `translateX(${
+          transform: `translate3d(${
             translateX * 2
-          }px) translateZ(-500px) rotateY(-35deg)`,
+          }px, 0px, -500px) rotateY(-35deg)`,
           zIndex: 7,
         };
-    },
-    [activeSlide, translateX, data]
-  );
+      }
+    };
+  }, [activeSlide, translateX, data]);
 
   return (
     <>
@@ -96,38 +100,21 @@ export default function Slider({
       <div className="slideC">
         {data.map((item, i) => (
           <Fragment key={i}>
-            <motion.div
-              initial={{
-                opacity: 0,
-                transform: getStyles(i)?.transform + " translateY(100%)",
-              }}
-              animate={{
-                opacity: 1,
-                transform: getStyles(i)?.transform + " translateY(0%)",
-              }}
-              transition={{
-                duration: 0.5,
-              }}
+            <div
               className={`slide ${activeSlide === i ? "active" : ""} `}
               style={{
                 ...getStyles(i),
               }}
             >
               <SliderContent {...item} />
-            </motion.div>
-            <motion.div
-              initial={{
-                opacity: 0,
-                transform: getStyles(i)?.transform + " translateY(100%)",
-              }}
-              animate={{
-                opacity: 0.25,
-                transform: getStyles(i)?.transform + " translateY(0%)",
-              }}
-              transition={{
-                duration: 0.5,
-              }}
-              className={`reflection ${activeSlide === i ? "active" : ""} `}
+            </div>
+            <div
+              className={cn(
+                {
+                  active: activeSlide === i,
+                },
+                "reflection"
+              )}
               style={{
                 ...getStyles(i),
               }}
