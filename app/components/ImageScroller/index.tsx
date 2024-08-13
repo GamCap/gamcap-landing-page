@@ -15,17 +15,20 @@ const ImageScroller: React.FC<ImageScrollerProps> = ({ images }) => {
       </div>
       <div className="marquee">
         <div className="marquee-content scrollMarquee">
-          {marqueeItems.map((imageSrc) => (
-            <li key={imageSrc} className="marqueeItem">
+          {marqueeItems.map((imageSrc, i) => (
+            <div key={imageSrc + "-marquee" + i} className="marqueeItem">
               <img src={imageSrc} alt="" />
-            </li>
+            </div>
           ))}
         </div>
         <div className="marquee-content scrollMarquee">
-          {marqueeItems.map((imageSrc) => (
-            <li key={imageSrc} className="marqueeItem">
+          {marqueeItems.map((imageSrc, i) => (
+            <div
+              key={imageSrc + "-marquee-content" + i}
+              className="marqueeItem"
+            >
               <img src={imageSrc} alt="" />
-            </li>
+            </div>
           ))}
         </div>
       </div>

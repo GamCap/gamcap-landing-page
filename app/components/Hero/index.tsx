@@ -6,6 +6,7 @@ import Donut from "../Icons/donut";
 import cn from "classnames";
 import ScrollToButton from "../ScrollToButton";
 import { AnimatePresence, motion } from "framer-motion";
+import { sendGTMEvent } from "@next/third-parties/google";
 
 export function Hero() {
   const parentRef = useRef<HTMLDivElement>(null);
@@ -102,6 +103,10 @@ export function Hero() {
             "bg-accent-mainGreen",
             "transition-colors duration-200 hover:bg-accent-mainGreenHover"
           )}
+          onClick={() => {
+            console.log("contactUs");
+            sendGTMEvent({ event: "buttonClicked", value: "contactUs" });
+          }}
         >
           <p className="text-background-primary text-[14px] lg:text-[16px] leading-[150%] font-medium">
             Contact us
