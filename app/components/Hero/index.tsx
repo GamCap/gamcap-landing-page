@@ -104,7 +104,6 @@ export function Hero() {
             "transition-colors duration-200 hover:bg-accent-mainGreenHover"
           )}
           onClick={() => {
-            console.log("contactUs");
             sendGTMEvent({ event: "buttonClicked", value: "contactUs" });
           }}
         >

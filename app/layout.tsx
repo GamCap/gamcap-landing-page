@@ -11,8 +11,6 @@ export const metadata: Metadata = {
   description: "Gamcap Labs is a company dedicated to blockchain data.",
 };
 
-const gtmId = process.env.NEXT_PUBLIC_GTM_ID || "";
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -21,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <GoogleTagManager gtmId={gtmId} />
+        <GoogleTagManager gtmId={"G-NS6KWT6SC3"} />
         <ThemeClient>
           <div className="flex min-h-screen flex-col items-center justify-between">
             <main className="flex-grow w-full h-full">{children}</main>
