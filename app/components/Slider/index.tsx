@@ -13,6 +13,7 @@ interface CardProps {
   github?: string;
   live?: string;
   titleLogo?: React.ReactNode;
+  id?: string;
 }
 
 interface SliderProps {
@@ -125,10 +126,10 @@ export default function Slider({
       {/* carousel */}
 
       <div className="btns">
-        <button onClick={prev}>
+        <button onClick={prev} id="ga-portfolio-prev">
           <ExpandRight className="rotate-180" />
         </button>
-        <button onClick={next}>
+        <button onClick={next} id="ga-portfolio-next">
           <ExpandRight />
         </button>
       </div>
@@ -151,6 +152,7 @@ const SliderContent = (props: CardProps) => {
             target="_blank"
             rel="noreferrer"
             title="Go to Live Site"
+            id={props.id ? props.id + "-live" : ""}
           >
             <Globe className="w-5 h-5" />
           </a>
@@ -161,6 +163,7 @@ const SliderContent = (props: CardProps) => {
             target="_blank"
             rel="noreferrer"
             title="See on GitHub"
+            id={props.id ? props.id + "-github" : ""}
           >
             <Github className="w-5 h-5" />
           </a>

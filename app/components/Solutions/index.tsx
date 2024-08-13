@@ -63,6 +63,7 @@ export function Solutions() {
                   } h-6 w-auto`}
                 />
               ),
+              id: "ga-nftbull",
             },
 
             {
@@ -72,6 +73,7 @@ export function Solutions() {
               github: "https://github.com/GamCap/uniswapeasy",
               donut: true,
               titleLogo: <UniswapLogo className="h-6 w-auto" />,
+              id: "ga-uniswapeasy",
             },
             {
               title: "Atlas",
@@ -80,6 +82,7 @@ export function Solutions() {
               live: "https://atlas.gamcaplabs.com",
               donut: true,
               titleLogo: <WorldcoinLogo className="h-6 w-auto" />,
+              id: "ga-atlas",
             },
             {
               title: "Polya AI",
@@ -87,6 +90,7 @@ export function Solutions() {
               github: "https://github.com/GamCap/polya",
               donut: true,
               titleLogo: <PolyaLogo className="h-6 w-auto" />,
+              id: "ga-polya",
             },
           ]}
         />
@@ -109,7 +113,11 @@ export function Solutions() {
               transition={{ duration: 0.5 }}
               className="flex justify-center pb-4"
             >
-              <ScrollToButton to="#Mission" text="Read our Mission & Vision" />
+              <ScrollToButton
+                to="#Mission"
+                text="Read our Mission & Vision"
+                id="ga-scroll-to-mission"
+              />
             </motion.div>
           )}
         </AnimatePresence>

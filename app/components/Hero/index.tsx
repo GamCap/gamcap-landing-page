@@ -6,7 +6,6 @@ import Donut from "../Icons/donut";
 import cn from "classnames";
 import ScrollToButton from "../ScrollToButton";
 import { AnimatePresence, motion } from "framer-motion";
-import { sendGTMEvent } from "@next/third-parties/google";
 
 export function Hero() {
   const parentRef = useRef<HTMLDivElement>(null);
@@ -103,9 +102,7 @@ export function Hero() {
             "bg-accent-mainGreen",
             "transition-colors duration-200 hover:bg-accent-mainGreenHover"
           )}
-          onClick={() => {
-            sendGTMEvent({ event: "buttonClicked", value: "contactUs" });
-          }}
+          id="ga-contact-us"
         >
           <p className="text-background-primary text-[14px] lg:text-[16px] leading-[150%] font-medium">
             Contact us
@@ -122,7 +119,11 @@ export function Hero() {
             transition={{ duration: 0.5 }}
             className={`absolute bottom-0 left-0 right-0 flex justify-center pb-4 z-[1]`}
           >
-            <ScrollToButton to="#Portfolio" text="See Portfolio" />
+            <ScrollToButton
+              to="#Portfolio"
+              text="See Portfolio"
+              id="ga-scroll-to-portfolio"
+            />
           </motion.div>
         )}
       </AnimatePresence>

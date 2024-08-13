@@ -50,13 +50,17 @@ export const Footer = () => {
           </p>
         </div>
         <div className="flex flex-row gap-2 lg:gap-4 justify-end md:justify-start">
-          <a href="https://twitter.com/gamcaplabs" target="_blank">
+          <a
+            href="https://twitter.com/gamcaplabs"
+            target="_blank"
+            id="ga-twitter"
+          >
             <TwitterIcon className="w-4 h-4 lg:w-6 lg:h-6 p-0.5 text-text-tertiary hover:text-accent-mainGreenHover transition-colors duration-500" />
           </a>
-          <a href="https://github.com/GamCap" target="_blank">
+          <a href="https://github.com/GamCap" target="_blank" id="ga-github">
             <GitHubIcon className="w-4 h-4 lg:w-6 lg:h-6 p-0.5 text-text-tertiary hover:text-accent-mainGreenHover transition-colors duration-500" />
           </a>
-          <a href="mailto:info@gamcaplabs.com" target="_blank">
+          <a href="mailto:info@gamcaplabs.com" target="_blank" id="ga-email">
             <Email className="w-4 h-4 lg:w-6 lg:h-6 text-text-tertiary hover:text-accent-mainGreenHover transition-colors duration-500" />
           </a>
         </div>
